@@ -1,0 +1,14 @@
+Jhoan ; 123 ; Bosa ; 789 ; Sisben
+Sebastian ; 456 ; Soacha ; 963 ; Categoria_A
+Pepito ; 1000363878 ; Cra 77 A ; 123 ; Categoria_B
+Rosa ; 112 ; Bosa ; 41 ; Sisben
+abc ; 112 ; qwery ; 5263 ; Sisben
+Jhoan ; 112 ; asdf ; 741 ; Categoria_A
+rosa ; 112 ; bosa ; 321 ; Categoria_A
+Seb ; 112 ; Suba ; 784 ; Categoria_B
+Seb ; 10 ; Suba ; 321 ; Categoria_B
+Jhoan ; 1000363878 ; Bosa ; 2010 ; Categoria_A
+Jhaon ; 1020 ; Bosa ; 2132 ; Categoria_A
+Andres ; 100 ; Bosa ; 321 ; Categoria_C
+Rosa ; 123 ; Bosa ; 748 ; Categoria_A
+qwerty ; 321 ; bosa ; 741 ; Categoria_A
