@@ -270,8 +270,8 @@ public class Controlador implements ActionListener
                     break;
             }
         }
-        if(ae.getSource().equals(objVPro.getBtnGenPDF()))
-        {
+        
+        if(ae.getSource().equals(objVPro.getBtnGenPDF())){
             ArchPdf PDF = new ArchPdf();
             hc = new Historia_Clinica();
             for (int i = 0; i < objRecaudo.getLista_H().size(); i++) {
@@ -281,6 +281,7 @@ public class Controlador implements ActionListener
             }
             PDF.crear_PDF(hc);
         }
+        
         if(ae.getSource().equals(objVL.getBtnEnviarLaboratorio()))
         {
             switch(objVL.getCmbTipoExamen().getSelectedIndex())
