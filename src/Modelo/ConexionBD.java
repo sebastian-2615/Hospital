@@ -29,7 +29,7 @@ public class ConexionBD {
     }
    public ConexionBD() {
         this.conexion = null;
-        this.bd = "parqueadero";
+        this.bd = "hospital";
         this.usuario = "root";
         this.clave = "";
         this.mensaje = "";
