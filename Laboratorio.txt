@@ -1,5 +1,1 @@
-1867479 ; Odontologia
-4839682 ; Odontologia
-9148883 ; Orina
-4695852 ; Orina
-8994681 ; Sangre
+8309552 ; Sangre

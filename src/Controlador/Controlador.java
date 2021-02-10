@@ -49,7 +49,8 @@ public class Controlador implements ActionListener
     Paciente objPac;
     Conexion con;
     Historia_Clinica hc;
-    int posicionCliente;
+    HospitalDAO objd;
+    int posicionCliente, cont;
     
     /**
      * Controplador basico que inicializa a las variables y activa o hace el escuchador de 
@@ -91,6 +92,8 @@ public class Controlador implements ActionListener
         objVHos.getBtnEnviarInformacion().addActionListener(this);
         objVPro.getBtnGenPDF().addActionListener(this);
         this.hc = new Historia_Clinica();
+        this.objd= new HospitalDAO();
+        this.cont=1;
     }
     
     /**
@@ -206,6 +209,7 @@ public class Controlador implements ActionListener
                     }
                     break;
             }
+            objd.insertarPac(objPac);
         }
         if(ae.getSource().equals(objVP.getOpcmHistoriaClinica()))
         {
@@ -269,6 +273,7 @@ public class Controlador implements ActionListener
                     objRecaudo.getLista_H().add(objH_C);
                     break;
             }
+            objd.insertarHC(objH_C);
         }
         
         if(ae.getSource().equals(objVPro.getBtnGenPDF())){
@@ -300,6 +305,7 @@ public class Controlador implements ActionListener
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_sangre);
+                    objd.insertar2(cont, objLab, ex_sangre, objH_C);
                     break;
                 case 2:
                     objH_C = new Historia_Clinica();
@@ -315,6 +321,7 @@ public class Controlador implements ActionListener
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_orina);
+                    objd.insertar2(cont, objLab, ex_orina, objH_C);
                     break;
                 case 3:
                     objH_C = new Historia_Clinica();
@@ -330,6 +337,7 @@ public class Controlador implements ActionListener
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_coprologico);
+                    objd.insertar2(cont, objLab, ex_coprologico, objH_C);
                     break;
                 case 4:
                     objH_C = new Historia_Clinica();
@@ -345,6 +353,7 @@ public class Controlador implements ActionListener
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_optometria);
+                    objd.insertar2(cont, objLab, ex_optometria, objH_C);
                     break;
                 case 5:
                     objH_C = new Historia_Clinica();
@@ -360,8 +369,11 @@ public class Controlador implements ActionListener
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_odontologia);
+                    objd.insertar2(cont, objLab, ex_odontologia, objH_C);
                     break;
             }
+            objd.insertarHC(objH_C);
+            
             try{
                 String datos = con.leerDatosLab();
                 archivoTabla(datos, objVL.getTblExamenes());
@@ -542,7 +554,6 @@ public class Controlador implements ActionListener
      * informacion
      */
     public void archivoTabla(String datos, JTable tabla){
-        int cont = 0;
         DefaultTableModel planilla = (DefaultTableModel) tabla.getModel();
         String ListaLaboratorio [] = datos.split("\n");
         for (int i = 0; i < ListaLaboratorio.length; i++) {

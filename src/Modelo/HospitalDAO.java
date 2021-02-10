@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Sonia Pinzón
  */
-public class ReciboDAO {
+public class HospitalDAO {
    
     
 
@@ -66,20 +66,21 @@ public class ReciboDAO {
            mensaje="Error al intentar insertar...\n"+ex;
         }
        return mensaje; 
-    }
-    public String insertar2(Recibo objr){
+    }*/
+    
+    public String insertarPac(Paciente objp){
         String mensaje=""; 
         try {
             ConexionBD conexion=new ConexionBD();
             PreparedStatement consulta = null;
             conexion.conectar();
-            String comando= "insert into recibo_entrada values(?,?,?,?,?)";
+            String comando= "insert into pacientes values(?,?,?,?,?)";
             consulta=conexion.getConexion().prepareStatement(comando);
-            consulta.setString(1,objr.getNumero());
-            //consulta.setString(2,objr);
-            consulta.setString(3,objr.getHe().toString());
-            consulta.setString(4,objr.getHs().toString());
-            consulta.setString(5,String.valueOf(objr.pagototal()));
+            consulta.setString(1,objp.getId());
+            consulta.setString(2,objp.getNombre());
+            consulta.setString(3,objp.getDireccion());
+            consulta.setString(4,objp.getTelefono());
+            consulta.setString(5,objp.getTipo_afiliacion().Tipo());
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();
@@ -88,8 +89,48 @@ public class ReciboDAO {
            mensaje="Error al intentar insertar...\n"+ex;
         }
       return mensaje;  
-    }*/
-
-    
+    }
+    public String insertarHC(Historia_Clinica objHC){
+        String mensaje=""; 
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            String comando= "insert into historia_clinica values(?,?,?,?)";
+            consulta=conexion.getConexion().prepareStatement(comando);
+            consulta.setString(1,String.valueOf(objHC.getId_Historia()));
+            consulta.setString(2,objHC.getFecha().toString());
+            consulta.setString(3,objHC.getPaciente().getNombre());
+            consulta.setString(4,objHC.getServicio().getNombre_Servicio());
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
+    public String insertar2(int x,Servicio objs, Examen obje,Historia_Clinica objHC){
+        String mensaje=""; 
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            String comando= "insert into laboratorio values(?,?,?,?)";
+            consulta=conexion.getConexion().prepareStatement(comando);
+            consulta.setString(1,String.valueOf(x));
+            consulta.setString(2,obje.getId_Examen());
+            consulta.setString(3,objHC.getPaciente().getId());
+            consulta.setString(4,objs.getNombre_Servicio());
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
      
 }
