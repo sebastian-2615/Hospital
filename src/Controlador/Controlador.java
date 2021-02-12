@@ -44,6 +44,7 @@ public class Controlador implements ActionListener
     Ventana_HistoriaClinica objHC;
     Ventana_Servicios objSer;
     Ventana_Hospitalizacion objVHos;
+    Ventana_Pacientes objP;
     Laboratorio objLab;
     Hospitalizacion objHosp;
     Paciente objPac;
@@ -76,6 +77,7 @@ public class Controlador implements ActionListener
         this.objHC = new Ventana_HistoriaClinica();
         this.objRecaudo = new Recaudo();
         this.objSer = new Ventana_Servicios();
+        this.objP = new Ventana_Pacientes();
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
         objVP.getOpcmHistoriaClinica().addActionListener(this);
@@ -83,6 +85,7 @@ public class Controlador implements ActionListener
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
         objVP.getOpcmHospitalizacion().addActionListener(this);
+        objVP.getOpcmPaciente().addActionListener(this);
         objVPro.getBtnConsultarPaciente().addActionListener(this);
         objVPro.getBtnEnviarProceso().addActionListener(this);
         objVReg.getBtnRegistrar().addActionListener(this);
@@ -91,6 +94,8 @@ public class Controlador implements ActionListener
         objSer.getBtnDescripcionServicios().addActionListener(this);
         objVHos.getBtnEnviarInformacion().addActionListener(this);
         objVPro.getBtnGenPDF().addActionListener(this);
+        objP.getBtnActualizar().addActionListener(this);
+        objP.getBtnEliminar().addActionListener(this);
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
         this.cont=1;
@@ -419,6 +424,14 @@ public class Controlador implements ActionListener
             if(resp==JOptionPane.YES_OPTION){
                 objVP.dispose();
             }
+        }
+        if(ae.getSource().equals(objVP.getOpcmPaciente()))
+        {
+            abrirVentana(objP);
+        }
+        if(ae.getSource().equals(objP.getBtnActualizar()))
+        {
+            
         }
 
     }

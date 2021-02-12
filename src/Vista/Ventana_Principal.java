@@ -43,6 +43,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         opcmHistoriaClinica = new javax.swing.JMenuItem();
         opcmRecaudo = new javax.swing.JMenuItem();
         opcmHospitalizacion = new javax.swing.JMenuItem();
+        opcPacientes = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -83,6 +84,14 @@ public class Ventana_Principal extends javax.swing.JFrame {
         });
         jMenu1.add(opcmHospitalizacion);
 
+        opcPacientes.setText("Listado Pacientes");
+        opcPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcPacientesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(opcPacientes);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -108,6 +117,10 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private void opcmHospitalizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcmHospitalizacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_opcmHospitalizacionActionPerformed
+
+    private void opcPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcPacientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcPacientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +219,14 @@ public class Ventana_Principal extends javax.swing.JFrame {
     public void setOpcmHospitalizacion(JMenuItem opcmHospitalizacion) {
         this.opcmHospitalizacion = opcmHospitalizacion;
     }
+
+    public JMenuItem getOpcPacientes() {
+        return opcPacientes;
+    }
+
+    public void setOpcPacientes(JMenuItem opcPacientes) {
+        this.opcPacientes = opcPacientes;
+    }
     
     
 
@@ -225,6 +246,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem opcPacientes;
     private javax.swing.JMenuItem opcmHistoriaClinica;
     private javax.swing.JMenuItem opcmHospitalizacion;
     private javax.swing.JMenuItem opcmPaciente;
