@@ -427,6 +427,7 @@ public class Controlador implements ActionListener
         }
         if(ae.getSource().equals(objVP.getOpcPacientes()))
         {
+            objP.getTblPacientes().setModel(objd.consultar());
             abrirVentana(objP);
         }
         if(ae.getSource().equals(objP.getBtnActualizar()))

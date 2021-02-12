@@ -2,3 +2,5 @@
  ;  ; 0.0
 324487 ; 11/2/2021 ; tygh ; 741 ; sedf ; 745 ; Categoria_C ; Cita_Medicina_General
  ;  ; 15000.0
+9858959 ; 12/2/2021 ; Juan ; 741 ; venecia ; 8585 ; Sisben ; Cita_Medicina_General
+ ;  ; 0.0

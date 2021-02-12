@@ -29,7 +29,7 @@ public class HospitalDAO {
         try {
            con.conectar();
            Statement consulta= con.getConexion().createStatement();
-            ResultSet datos= consulta.executeQuery("select * from recibo_entrada");
+            ResultSet datos= consulta.executeQuery("select * from pacientes");
             ResultSetMetaData campos=datos.getMetaData();
             for (int i = 1; i <= campos.getColumnCount(); i++) {
                 plantilla.addColumn(campos.getColumnName(i));
