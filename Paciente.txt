@@ -3,3 +3,7 @@ Juan ; 963 ; Fontibon ; 159 ; Sisben
 tygh ; 741 ; sedf ; 745 ; Categoria_C
 Juan ; 741 ; venecia ; 8585 ; Sisben
 Antonio ; 856 ; Tintal ; 965 ; Categoria_B
+Rosa ; 753 ; Bosa ; 987 ; Sisben
+Rocio ; 755 ; Bosa ; 996 ; Sisben
+Ernesto ; 1020 ; Suba ; 41 ; Sisben
+julio ; 1030 ; Suba ; 77 ; Sisben

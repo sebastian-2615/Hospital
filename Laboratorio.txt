@@ -1,2 +1,4 @@
 8309552 ; Sangre
 3294820 ; Sangre
+2942270 ; Orina
+8996564 ; Optometría

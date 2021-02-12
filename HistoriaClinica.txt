@@ -4,3 +4,7 @@
  ;  ; 15000.0
 9858959 ; 12/2/2021 ; Juan ; 741 ; venecia ; 8585 ; Sisben ; Cita_Medicina_General
  ;  ; 0.0
+884658 ; 12/2/2021 ; Rosa ; 753 ; Bosa ; 987 ; Sisben ; Cita_Medicina_General
+ ;  ; 0.0
+3757308 ; 12/2/2021 ; julio ; 1030 ; Suba ; 77 ; Sisben ; Vacunacion
+ ;  ; 0.0
