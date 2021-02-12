@@ -133,4 +133,29 @@ public class HospitalDAO {
       return mensaje;  
     }
      
+    public String Actualizar(Paciente objp){
+        String mensaje=""; 
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            JOptionPane.showConfirmDialog(null, objp.toString());
+            String instruccion= "update pacientes "
+                    +"set id=?, nombre=?, direccion=?, telefono=?, tipo_afiliacion=? where id='"
+                    +objp.getId()+"'";
+            consulta=conexion.getConexion().prepareStatement(instruccion);
+            consulta.setString(1,objp.getId());
+            consulta.setString(2,objp.getNombre());
+            consulta.setString(3,objp.getDireccion());
+            consulta.setString(4,objp.getTelefono());
+            consulta.setString(5,objp.getTipo_afiliacion().Tipo());
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
 }
