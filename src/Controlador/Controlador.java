@@ -245,7 +245,7 @@ public class Controlador implements ActionListener
             switch(objVPro.getCmbServicioPro().getSelectedIndex())
             {
                 case 1:
-                    //objH_C = new Historia_Clinica();
+                    
                     objServicio = new Cita_Medicina_General();
                     objServicio.setNombre_Servicio("CITA MEDICA GENERAL");
                     objServicio.setDescripcion(objVPro.getTxtADescripcion().getText());
@@ -257,7 +257,7 @@ public class Controlador implements ActionListener
                     escribirDatosHC(objH_C);
                     break;
                 case 2:
-                    //objH_C = new Historia_Clinica();
+                    
                     objServicio = new Vacunacion();
                     objServicio.setNombre_Servicio("VACUNACION");
                     objServicio.setId_Servicio(generarId());
@@ -271,7 +271,7 @@ public class Controlador implements ActionListener
                     abrirVentana(objVL);
                     break;
                 case 4:
-                    //objH_C = new Historia_Clinica();
+                    
                     objHosp = new Hospitalizacion();
                     objHosp.setNombre_Servicio("HOSPITALIZACION");
                     objHosp.setId_Servicio(generarId());
@@ -285,7 +285,7 @@ public class Controlador implements ActionListener
             try{
                 objd.insertarHC(objH_C);
             }catch(NullPointerException x){
-                //JOptionPane.showMessageDialog(objVPro, x.toString());
+                
             }
         }
         
