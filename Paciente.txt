@@ -1,1 +1,3 @@
 Jhoan ; 1000363878 ; Bosa ; 1231212 ; Categoria_A
+Juan ; 963 ; Fontibon ; 159 ; Sisben
+tygh ; 741 ; sedf ; 745 ; Categoria_C

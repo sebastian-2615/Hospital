@@ -85,7 +85,7 @@ public class Controlador implements ActionListener
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
         objVP.getOpcmHospitalizacion().addActionListener(this);
-        objVP.getOpcmPaciente().addActionListener(this);
+        objVP.getOpcPacientes().addActionListener(this);
         objVPro.getBtnConsultarPaciente().addActionListener(this);
         objVPro.getBtnEnviarProceso().addActionListener(this);
         objVReg.getBtnRegistrar().addActionListener(this);
@@ -425,13 +425,13 @@ public class Controlador implements ActionListener
                 objVP.dispose();
             }
         }
-        if(ae.getSource().equals(objVP.getOpcmPaciente()))
+        if(ae.getSource().equals(objVP.getOpcPacientes()))
         {
             abrirVentana(objP);
         }
         if(ae.getSource().equals(objP.getBtnActualizar()))
         {
-            
+            JOptionPane.showMessageDialog(objP, objd.Actualizar(objPac));
         }
 
     }

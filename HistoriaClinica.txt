@@ -1,0 +1,4 @@
+6935 ; 11/2/2021 ; Juan ; 963 ; Fontibon ; 159 ; Sisben ; Cita_Medicina_General
+ ;  ; 0.0
+324487 ; 11/2/2021 ; tygh ; 741 ; sedf ; 745 ; Categoria_C ; Cita_Medicina_General
+ ;  ; 15000.0
