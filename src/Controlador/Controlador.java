@@ -224,11 +224,14 @@ public class Controlador implements ActionListener
         {
             try
             {
-                Double.parseDouble(objVPro.getTxtCIdPaciente().getText());
-                objVPro.getTxtNombreProceso().setText(lista_pacientes.get(devuelvePosicion(objVPro.getTxtCIdPaciente().getText())).getNombre());
-                objVPro.getTxtIdProceso().setText(lista_pacientes.get(devuelvePosicion(objVPro.getTxtCIdPaciente().getText())).getId());
-                objVPro.getTxtDireccionPro().setText(lista_pacientes.get(devuelvePosicion(objVPro.getTxtCIdPaciente().getText())).getDireccion());
-                objVPro.getTxtTelefonoPro().setText(lista_pacientes.get(devuelvePosicion(objVPro.getTxtCIdPaciente().getText())).getTelefono());
+                for(int i = 0; i<lista_pacientes.size();i++){
+                    if(lista_pacientes.get(i).getId().equals(objVPro.getTxtCIdPaciente().getText())){
+                        objVPro.getTxtIdProceso().setText(lista_pacientes.get(i).getId());
+                        objVPro.getTxtNombreProceso().setText(lista_pacientes.get(i).getNombre());
+                        objVPro.getTxtDireccionPro().setText(lista_pacientes.get(i).getDireccion());
+                        objVPro.getTxtTelefonoPro().setText(lista_pacientes.get(i).getTelefono());
+                    }
+                }
                 posicionCliente = devuelvePosicion(objVPro.getTxtCIdPaciente().getText());
             }catch(NumberFormatException nfe)
             {
@@ -282,7 +285,7 @@ public class Controlador implements ActionListener
             try{
                 objd.insertarHC(objH_C);
             }catch(NullPointerException x){
-                JOptionPane.showMessageDialog(objVPro, x.toString());
+                //JOptionPane.showMessageDialog(objVPro, x.toString());
             }
         }
         

@@ -7,3 +7,6 @@ Rosa ; 753 ; Bosa ; 987 ; Sisben
 Rocio ; 755 ; Bosa ; 996 ; Sisben
 Ernesto ; 1020 ; Suba ; 41 ; Sisben
 julio ; 1030 ; Suba ; 77 ; Sisben
+Daniela ; 3020 ; Usme ; 314 ; Categoria_C
+PEPE ; 5252 ; Bosa ; 7485 ; Sisben
+Pepe ; 5252 ; Usme ; 5656 ; Sisben

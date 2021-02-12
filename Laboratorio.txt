@@ -2,3 +2,4 @@
 3294820 ; Sangre
 2942270 ; Orina
 8996564 ; Optometría
+8008557 ; Odontologia
