@@ -139,7 +139,7 @@ public class HospitalDAO {
             ConexionBD conexion=new ConexionBD();
             PreparedStatement consulta = null;
             conexion.conectar();
-            JOptionPane.showConfirmDialog(null, objp.toString());
+            JOptionPane.showMessageDialog(null, objp.toString());
             String instruccion= "update pacientes "
                     +"set id=?, nombre=?, direccion=?, telefono=?, tipo_afiliacion=? where id='"
                     +objp.getId()+"'";
