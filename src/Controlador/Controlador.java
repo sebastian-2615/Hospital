@@ -393,6 +393,7 @@ public class Controlador implements ActionListener
             }catch(IOException ex){
                 
             }
+            objVL.dispose();
         }
         if(ae.getSource().equals(objVP.getOpcmHospitalizacion()))
         {
