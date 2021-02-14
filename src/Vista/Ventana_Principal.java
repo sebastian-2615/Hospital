@@ -54,7 +54,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         lblHora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblHora.setText("   00:00:00");
         pndEscritorio.add(lblHora);
-        lblHora.setBounds(717, 600, 80, 30);
+        lblHora.setBounds(740, 610, 70, 30);
 
         jMenu2.setText("Archivo");
 
