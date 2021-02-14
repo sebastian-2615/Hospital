@@ -140,8 +140,8 @@ public class HospitalDAO {
             PreparedStatement consulta = null;
             conexion.conectar();
             JOptionPane.showMessageDialog(null, objp.toString());
-            String instruccion= "update pacientes "
-                    +"set id=?, nombre=?, direccion=?, telefono=?, tipo_afiliacion=? where id='"
+            String instruccion= "update `pacientes` "
+                    +"set `id`=?, `nombre`=?, `direccion`=?, `telefono`=?, `tipo_afiliacion`=? where `id`='"
                     +objp.getId()+"'";
             consulta=conexion.getConexion().prepareStatement(instruccion);
             consulta.setString(1,objp.getId());

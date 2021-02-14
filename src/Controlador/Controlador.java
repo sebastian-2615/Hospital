@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JInternalFrame;
@@ -20,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * es decir que es la estructura el programa
  * @author Sebastian Molina y Joan Morales
  */
-public class Controlador implements ActionListener
+public class Controlador implements ActionListener, Runnable
 {
     /**
      * 
@@ -51,6 +52,8 @@ public class Controlador implements ActionListener
     Conexion con;
     Historia_Clinica hc;
     HospitalDAO objd;
+    Hora hora;
+    Thread hilo;
     int posicionCliente, cont;
     
     /**
@@ -99,6 +102,8 @@ public class Controlador implements ActionListener
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
         this.cont=1;
+        this.hora = new Hora();
+        this.hilo = new Thread(this);
     }
     
     /**
@@ -107,6 +112,7 @@ public class Controlador implements ActionListener
     public void iniciar()
     {
         objVP.setVisible(true);
+        hilo.start();
         objVP.setLocationRelativeTo(null);
     }
     
@@ -584,6 +590,20 @@ public class Controlador implements ActionListener
             Object fila[] = {cont, lab[0], lab[1]};
             planilla.addRow(fila);
             cont++;
+        }
+    }
+
+    @Override
+    public void run() {
+        while(true){
+            try {
+                //System.out.print(imprimirTabla(cont));
+                objVP.getLblHora().setText(hora.toString());
+                hora.actualizarSeg();
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                System.out.println("Error"+ex.toString());
+            }
         }
     }
 }

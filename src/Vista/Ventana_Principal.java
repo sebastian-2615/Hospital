@@ -6,6 +6,7 @@
 package Vista;
 
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -34,6 +35,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         pndEscritorio = new javax.swing.JDesktopPane();
+        lblHora = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         opcmSalir = new javax.swing.JMenuItem();
@@ -48,6 +50,11 @@ public class Ventana_Principal extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblHora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHora.setText("   00:00:00");
+        pndEscritorio.add(lblHora);
+        lblHora.setBounds(717, 600, 80, 30);
 
         jMenu2.setText("Archivo");
 
@@ -100,11 +107,11 @@ public class Ventana_Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
+            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 808, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
         );
 
         pack();
@@ -236,6 +243,14 @@ public class Ventana_Principal extends javax.swing.JFrame {
     public void setOpcmPaciente(JMenuItem opcmPaciente) {
         this.opcmPaciente = opcmPaciente;
     }
+
+    public JLabel getLblHora() {
+        return lblHora;
+    }
+
+    public void setLblHora(JLabel lblHora) {
+        this.lblHora = lblHora;
+    }
     
     
     
@@ -246,6 +261,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel lblHora;
     private javax.swing.JMenuItem opcPacientes;
     private javax.swing.JMenuItem opcmHistoriaClinica;
     private javax.swing.JMenuItem opcmHospitalizacion;
