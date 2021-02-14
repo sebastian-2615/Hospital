@@ -45,7 +45,10 @@ public class Ventana_Principal extends javax.swing.JFrame {
         opcmHistoriaClinica = new javax.swing.JMenuItem();
         opcmRecaudo = new javax.swing.JMenuItem();
         opcmHospitalizacion = new javax.swing.JMenuItem();
-        opcPacientes = new javax.swing.JMenuItem();
+        menListados = new javax.swing.JMenu();
+        OpclisPac = new javax.swing.JMenuItem();
+        OpclisHC = new javax.swing.JMenuItem();
+        OpclisLab = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -91,15 +94,25 @@ public class Ventana_Principal extends javax.swing.JFrame {
         });
         jMenu1.add(opcmHospitalizacion);
 
-        opcPacientes.setText("Listado Pacientes");
-        opcPacientes.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.add(jMenu1);
+
+        menListados.setText("Listados");
+
+        OpclisPac.setText("Listado Pacientes");
+        menListados.add(OpclisPac);
+
+        OpclisHC.setText("Listado Historia Clinica");
+        menListados.add(OpclisHC);
+
+        OpclisLab.setText("Listado Laboratorio");
+        OpclisLab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcPacientesActionPerformed(evt);
+                OpclisLabActionPerformed(evt);
             }
         });
-        jMenu1.add(opcPacientes);
+        menListados.add(OpclisLab);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menListados);
 
         setJMenuBar(jMenuBar1);
 
@@ -111,7 +124,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+            .addComponent(pndEscritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
         );
 
         pack();
@@ -125,9 +138,9 @@ public class Ventana_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_opcmHospitalizacionActionPerformed
 
-    private void opcPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcPacientesActionPerformed
+    private void OpclisLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpclisLabActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opcPacientesActionPerformed
+    }//GEN-LAST:event_OpclisLabActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,13 +240,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         this.opcmHospitalizacion = opcmHospitalizacion;
     }
 
-    public JMenuItem getOpcPacientes() {
-        return opcPacientes;
-    }
-
-    public void setOpcPacientes(JMenuItem opcPacientes) {
-        this.opcPacientes = opcPacientes;
-    }
+    
     
     
 
@@ -251,18 +258,53 @@ public class Ventana_Principal extends javax.swing.JFrame {
     public void setLblHora(JLabel lblHora) {
         this.lblHora = lblHora;
     }
+
+    public JMenuItem getOpclisHC() {
+        return OpclisHC;
+    }
+
+    public void setOpclisHC(JMenuItem OpclisHC) {
+        this.OpclisHC = OpclisHC;
+    }
+
+    public JMenuItem getOpclisLab() {
+        return OpclisLab;
+    }
+
+    public void setOpclisLab(JMenuItem OpclisLab) {
+        this.OpclisLab = OpclisLab;
+    }
+
+    public JMenuItem getOpclisPac() {
+        return OpclisPac;
+    }
+
+    public void setOpclisPac(JMenuItem OpclisPac) {
+        this.OpclisPac = OpclisPac;
+    }
+
+    public JMenu getMenListados() {
+        return menListados;
+    }
+
+    public void setMenListados(JMenu menListados) {
+        this.menListados = menListados;
+    }
     
     
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem OpclisHC;
+    private javax.swing.JMenuItem OpclisLab;
+    private javax.swing.JMenuItem OpclisPac;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lblHora;
-    private javax.swing.JMenuItem opcPacientes;
+    private javax.swing.JMenu menListados;
     private javax.swing.JMenuItem opcmHistoriaClinica;
     private javax.swing.JMenuItem opcmHospitalizacion;
     private javax.swing.JMenuItem opcmPaciente;

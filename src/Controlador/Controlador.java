@@ -88,7 +88,9 @@ public class Controlador implements ActionListener, Runnable
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
         objVP.getOpcmHospitalizacion().addActionListener(this);
-        objVP.getOpcPacientes().addActionListener(this);
+        objVP.getOpclisPac().addActionListener(this);
+        objVP.getOpclisHC().addActionListener(this);
+        objVP.getOpclisLab().addActionListener(this);
         objVPro.getBtnConsultarPaciente().addActionListener(this);
         objVPro.getBtnEnviarProceso().addActionListener(this);
         objVReg.getBtnRegistrar().addActionListener(this);
@@ -440,7 +442,7 @@ public class Controlador implements ActionListener, Runnable
                 objVP.dispose();
             }
         }
-        if(ae.getSource().equals(objVP.getOpcPacientes()))
+        if(ae.getSource().equals(objVP.getOpclisPac()))
         {
             objP.getTblPacientes().setModel(objd.consultar());
             abrirVentana(objP);

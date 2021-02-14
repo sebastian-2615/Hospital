@@ -59,12 +59,29 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcmHospitalizacionActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="opcPacientes">
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menListados">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Listados"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="OpclisPac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listado Pacientes"/>
               </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="OpclisHC">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listado Historia Clinica"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="OpclisLab">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listado Laboratorio"/>
+              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcPacientesActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OpclisLabActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -100,7 +117,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pndEscritorio" pref="637" max="32767" attributes="0"/>
+          <Component id="pndEscritorio" alignment="1" pref="637" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
