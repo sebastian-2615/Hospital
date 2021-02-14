@@ -597,7 +597,6 @@ public class Controlador implements ActionListener, Runnable
     public void run() {
         while(true){
             try {
-                //System.out.print(imprimirTabla(cont));
                 objVP.getLblHora().setText(hora.toString());
                 hora.actualizarSeg();
                 sleep(1000);
