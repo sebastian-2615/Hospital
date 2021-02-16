@@ -223,6 +223,7 @@ public class Controlador implements ActionListener, Runnable
                     break;
             }
             objd.insertarPac(objPac);
+            ActualizarReg();
             objVReg.dispose();
         }
         if(ae.getSource().equals(objVP.getOpcmHistoriaClinica()))
@@ -599,6 +600,14 @@ public class Controlador implements ActionListener, Runnable
             planilla.addRow(fila);
             cont++;
         }
+    }
+    
+    public void ActualizarReg(){
+        objVReg.getTxtIdentificacionPersona().setText("");
+        objVReg.getTxtNombrePersona().setText("");
+        objVReg.getTxtDireccionPersona().setText("");
+        objVReg.getTxtTelefonoPersona().setText("");
+        
     }
 
     @Override
