@@ -176,6 +176,7 @@ public class HospitalDAO {
            mensaje="Error al intentar insertar...\n"+ex;
         }
         
+        
       return mensaje;  
     }
 }
