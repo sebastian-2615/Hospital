@@ -10,3 +10,5 @@ julio ; 1030 ; Suba ; 77 ; Sisben
 Daniela ; 3020 ; Usme ; 314 ; Categoria_C
 PEPE ; 5252 ; Bosa ; 7485 ; Sisben
 Pepe ; 5252 ; Usme ; 5656 ; Sisben
+Carlos Vanegas ; 123456 ; Cr 33  ; 33333333 ; Categoria_A
+Jhoan ; 1000363878 ; Bosa ; 3195333333 ; Categoria_C

@@ -96,12 +96,13 @@ public class HospitalDAO {
             ConexionBD conexion=new ConexionBD();
             PreparedStatement consulta = null;
             conexion.conectar();
-            String comando= "insert into historia_clinica values(?,?,?,?)";
+            String comando= "insert into historia_clinica values(?,?,?,?,?)";
             consulta=conexion.getConexion().prepareStatement(comando);
             consulta.setString(1,String.valueOf(objHC.getId_Historia()));
             consulta.setString(2,objHC.getFecha().toString());
-            consulta.setString(3,objHC.getPaciente().getNombre());
-            consulta.setString(4,objHC.getServicio().getNombre_Servicio());
+            consulta.setString(3,objHC.getPaciente().getId());
+            consulta.setString(4,objHC.getPaciente().getNombre());
+            consulta.setString(5,objHC.getServicio().getNombre_Servicio());
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();
