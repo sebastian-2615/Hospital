@@ -140,8 +140,8 @@ public class HospitalDAO {
             PreparedStatement consulta = null;
             conexion.conectar();
             JOptionPane.showMessageDialog(null, objp.toString());
-            String instruccion= "update `pacientes` "
-                    +"set `id`=?, `nombre`=?, `direccion`=?, `telefono`=?, `tipo_afiliacion`=? where `id`='"
+            String instruccion= "update pacientes "
+                    +"set id=?, nombre=?, direccion=?, telefono=?, tipo_afiliacion=? where id='"
                     +objp.getId()+"'";
             consulta=conexion.getConexion().prepareStatement(instruccion);
             consulta.setString(1,objp.getId());
@@ -149,6 +149,25 @@ public class HospitalDAO {
             consulta.setString(3,objp.getDireccion());
             consulta.setString(4,objp.getTelefono());
             consulta.setString(5,objp.getTipo_afiliacion().Tipo());
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
+    
+    public String Eliminar(String com){
+        String mensaje=""; 
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            JOptionPane.showMessageDialog(null, com);
+            String instruccion= "delete from pacientes where id='"+com+"'";
+            consulta=conexion.getConexion().prepareStatement(instruccion);
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();
