@@ -175,8 +175,6 @@ public class HospitalDAO {
         } catch (SQLException ex) {
            mensaje="Error al intentar insertar...\n"+ex;
         }
-        
-        
       return mensaje;  
     }
 }
