@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JToolBar;
 
 /**
  *
@@ -35,6 +36,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         pndEscritorio = new javax.swing.JDesktopPane();
+        jToolBar1 = new javax.swing.JToolBar();
         lblHora = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -54,10 +56,14 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jToolBar1.setRollover(true);
+
         lblHora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblHora.setText("   00:00:00");
-        pndEscritorio.add(lblHora);
-        lblHora.setBounds(740, 610, 70, 30);
+        jToolBar1.add(lblHora);
+
+        pndEscritorio.add(jToolBar1);
+        jToolBar1.setBounds(0, 660, 810, 30);
 
         jMenu2.setText("Archivo");
 
@@ -124,7 +130,9 @@ public class Ventana_Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pndEscritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pndEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -290,6 +298,14 @@ public class Ventana_Principal extends javax.swing.JFrame {
     public void setMenListados(JMenu menListados) {
         this.menListados = menListados;
     }
+
+    public JToolBar getjToolBar1() {
+        return jToolBar1;
+    }
+
+    public void setjToolBar1(JToolBar jToolBar1) {
+        this.jToolBar1 = jToolBar1;
+    }
     
     
     
@@ -303,6 +319,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblHora;
     private javax.swing.JMenu menListados;
     private javax.swing.JMenuItem opcmHistoriaClinica;
