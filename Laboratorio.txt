@@ -1,8 +1,0 @@
-8309552 ; Sangre
-3294820 ; Sangre
-2942270 ; Orina
-8996564 ; Optometría
-8008557 ; Odontologia
-6184628 ; Orina
-1636486 ; Sangre
-9797916 ; Optometría

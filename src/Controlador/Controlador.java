@@ -223,6 +223,7 @@ public class Controlador implements ActionListener, Runnable
                     break;
             }
             objd.insertarPac(objPac);
+            objVReg.dispose();
         }
         if(ae.getSource().equals(objVP.getOpcmHistoriaClinica()))
         {
