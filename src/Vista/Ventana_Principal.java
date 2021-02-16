@@ -59,7 +59,9 @@ public class Ventana_Principal extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
 
         lblHora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblHora.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblHora.setText("   00:00:00");
+        lblHora.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jToolBar1.add(lblHora);
 
         pndEscritorio.add(jToolBar1);

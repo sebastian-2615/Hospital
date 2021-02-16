@@ -141,6 +141,10 @@ public class Historia_Clinica
             dato =  this.Id_Historia+ " ; "+this.fecha+" ; "+this.paciente.Datos()+" ; "+"Hospitalizacion"+"\n"+" ; "+this.servicio.getDescripcion()
                     +" ; "+this.servicio.tarifaServicio(paciente); 
         }
+        if(this.servicio instanceof Laboratorio){
+            dato =  this.Id_Historia+ " ; "+this.fecha+" ; "+this.paciente.Datos()+" ; "+"Laboratorio"+"\n"+" ; "+this.servicio.getDescripcion()
+                    +" ; "+this.servicio.tarifaServicio(paciente); 
+        }
         return dato;
     }
     

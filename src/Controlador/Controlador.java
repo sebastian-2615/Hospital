@@ -394,14 +394,13 @@ public class Controlador implements ActionListener, Runnable
                     break;
             }
             objd.insertarHC(objH_C);
-            
+            escribirDatosHC(objH_C);
             try{
                 String datos = con.leerDatosLab();
                 archivoTabla(datos, objVL.getTblExamenes());
             }catch(IOException ex){
                 
             }
-            objVL.dispose();
         }
         if(ae.getSource().equals(objVP.getOpcmHospitalizacion()))
         {
@@ -451,6 +450,11 @@ public class Controlador implements ActionListener, Runnable
         if(ae.getSource().equals(objP.getBtnActualizar()))
         {
             JOptionPane.showMessageDialog(objP, objd.Actualizar(objPac));
+        }
+        if(ae.getSource().equals(objP.getBtnEliminar()))
+        {
+            String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
+            JOptionPane.showMessageDialog(objP, objd.Eliminar(delete));
         }
 
     }
