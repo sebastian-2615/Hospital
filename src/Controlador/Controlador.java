@@ -460,6 +460,7 @@ public class Controlador implements ActionListener, Runnable
             objd.setObjP(new Paciente(objA.getTxtNombrePersona().getText(),objA.getTxtIdentificacionPersona().getText(),objA.getTxtDireccionPersona().getText()
                     ,objA.getTxtTelefonoPersona().getText(),null));
             JOptionPane.showMessageDialog(objA, objd.ActualizarPac(objA.getTxtIdentificacionPersona().getText()));
+            objA.dispose();
             
         }
     }
