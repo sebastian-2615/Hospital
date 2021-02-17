@@ -48,7 +48,7 @@ public class ArchPdf {
                 // se crea instancia del documento
                 Document mipdf = new Document();
                 // se establece una instancia a un documento pdf
-                PdfWriter pw = PdfWriter.getInstance(mipdf, new FileOutputStream("src/PDF/"+objh.getPaciente().getNombre()+ ".pdf"));
+                PdfWriter pw = PdfWriter.getInstance(mipdf, new FileOutputStream("src/PDF/"+objh.getPaciente().getId()+ ".pdf"));
                 mipdf.open();// se abre el documento
                 mipdf.addTitle("Recibo Entrada Parqueadero"); // se añade el titulo
                 /*mipdf.addAuthor(a); // se añade el autor del documento

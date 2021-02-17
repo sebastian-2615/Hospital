@@ -5,3 +5,6 @@ Pedro ; 987 ; Suba ; 789 ; Categoria_B
 Mary ; 4152 ; Usme ; 9584 ; Categoria_C
 Hugo ; 79659 ; Bosa ; 319533 ; Categoria_A
 Leidy ; 45513 ; Bosa ; 314 ; Categoria_B
+Jhoan ; 1000363878 ; Bosa ; 3195333333 ; Categoria_A
+Sara ; 123 ; Suba ; 951 ; Categoria_A
+Maria ; 147 ; Kennedy ; 8585 ; Categoria_A
