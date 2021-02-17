@@ -9,3 +9,4 @@ Jhoan ; 1000363878 ; Bosa ; 3195333333 ; Categoria_A
 Sara ; 123 ; Suba ; 951 ; Categoria_A
 Maria ; 147 ; Kennedy ; 8585 ; Categoria_A
 Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A
+Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A

@@ -409,6 +409,7 @@ public class Controlador implements ActionListener, Runnable
             }catch(IOException ex){
                 
             }
+            objVPro.dispose();
         }
         if(ae.getSource().equals(objVP.getOpcmHospitalizacion()))
         {
