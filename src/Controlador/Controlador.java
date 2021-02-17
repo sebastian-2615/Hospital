@@ -404,25 +404,7 @@ public class Controlador implements ActionListener, Runnable
         {
             abrirVentana(objVHos);
         }
-        if(ae.getSource().equals(objVHos.getBtnEnviarInformacion()))
-        {
-            try
-            {
-                Double.parseDouble(objVHos.getTxtIdPacienteHos().getText());
-                if(devuelveEstado(objVHos.getTxtIdPacienteHos().getText())!=-1)
-                {
-                    objVHos.getTxtAInformacionPaciente().append(objRecaudo.getLista_H().get(devuelveEstado(objVHos.getTxtIdPacienteHos().getText())).getPaciente().toString());
-                }
-                else
-                {
-                    objVHos.getTxtAInformacionPaciente().append("El paciente no tiene vinculado ningun servicio de Hospitalización");
-                }
-            }catch(NumberFormatException nfe)
-            {
-                JOptionPane.showMessageDialog(objVReg, "Identificacion debe ser de tipo numerico");
-            }
-
-        }
+        
         
         if(ae.getSource().equals(objVP.getOpcmRecaudo()))
         {
@@ -459,12 +441,14 @@ public class Controlador implements ActionListener, Runnable
             objHosp = new Hospitalizacion();
             objHosp.setNombre_Servicio("HOSPITALIZACION");
             objHosp.setId_Servicio(generarId());
-            objHosp.getDescripcion();
+            objHosp.setDescripcion(objVHos.getTxtDesc().getText());
             objH_C.setId_Historia(Integer.parseInt(generarId()));
             objH_C.setPaciente(lista_pacientes.get(posicionCliente));
             objHosp.setFecha_salida(new Fecha());
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
+            PDF.crear_PDF(objH_C);
+            objVHos.dispose();
         }
 
     }

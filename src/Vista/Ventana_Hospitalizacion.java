@@ -39,14 +39,13 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
         txtIdPacienteHos = new javax.swing.JTextField();
         btnEnviarInformacion = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAInformacionPaciente = new javax.swing.JTextArea();
+        txtDesc = new javax.swing.JTextField();
 
         setClosable(true);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Consulta"));
 
-        jLabel1.setText("IDENTIFICACIÓN PACIENTE");
+        jLabel1.setText("Cantidad de Dias de Hospitalizacion");
 
         btnEnviarInformacion.setText("ENVIAR");
         btnEnviarInformacion.addActionListener(new java.awt.event.ActionListener() {
@@ -63,12 +62,12 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnEnviarInformacion)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(txtIdPacienteHos, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
+                .addComponent(txtIdPacienteHos, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEnviarInformacion)
+                .addGap(169, 169, 169))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,15 +76,18 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtIdPacienteHos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(btnEnviarInformacion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEnviarInformacion)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Información"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Diagnostico"));
 
-        txtAInformacionPaciente.setColumns(20);
-        txtAInformacionPaciente.setRows(5);
-        jScrollPane1.setViewportView(txtAInformacionPaciente);
+        txtDesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -93,13 +95,14 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(txtDesc)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(txtDesc, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -131,6 +134,10 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEnviarInformacionActionPerformed
 
+    private void txtDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescActionPerformed
+
     public JLabel getjLabel1() {
         return jLabel1;
     }
@@ -157,21 +164,15 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
         this.jPanel2 = jPanel2;
     }
 
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
+    public JTextField getTxtDesc() {
+        return txtDesc;
     }
 
-    public void setjScrollPane1(JScrollPane jScrollPane1) {
-        this.jScrollPane1 = jScrollPane1;
+    public void setTxtDesc(JTextField txtDesc) {
+        this.txtDesc = txtDesc;
     }
 
-    public JTextArea getTxtAInformacionPaciente() {
-        return txtAInformacionPaciente;
-    }
-
-    public void setTxtAInformacionPaciente(JTextArea txtAInformacionPaciente) {
-        this.txtAInformacionPaciente = txtAInformacionPaciente;
-    }
+    
 
     
 
@@ -203,8 +204,7 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtAInformacionPaciente;
+    private javax.swing.JTextField txtDesc;
     private javax.swing.JTextField txtIdPacienteHos;
     // End of variables declaration//GEN-END:variables
 }
