@@ -38,8 +38,9 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         txtIdPacienteHos = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        txtDesc = new javax.swing.JTextField();
         btnEnviarInformacion = new javax.swing.JToggleButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDesc = new javax.swing.JTextArea();
 
         setClosable(true);
 
@@ -70,18 +71,16 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Diagnostico"));
 
-        txtDesc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDescActionPerformed(evt);
-            }
-        });
-
         btnEnviarInformacion.setText("ENVIAR");
         btnEnviarInformacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarInformacionActionPerformed(evt);
             }
         });
+
+        txtDesc.setColumns(20);
+        txtDesc.setRows(5);
+        jScrollPane1.setViewportView(txtDesc);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -90,18 +89,18 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDesc)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnEnviarInformacion)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 328, Short.MAX_VALUE)
+                        .addComponent(btnEnviarInformacion))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtDesc, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEnviarInformacion))
         );
 
@@ -133,10 +132,6 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEnviarInformacionActionPerformed
 
-    private void txtDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescActionPerformed
-
     public JLabel getjLabel1() {
         return jLabel1;
     }
@@ -163,13 +158,15 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
         this.jPanel2 = jPanel2;
     }
 
-    public JTextField getTxtDesc() {
+    public JTextArea getTxtDesc() {
         return txtDesc;
     }
 
-    public void setTxtDesc(JTextField txtDesc) {
+    public void setTxtDesc(JTextArea txtDesc) {
         this.txtDesc = txtDesc;
     }
+
+    
 
     
 
@@ -203,7 +200,8 @@ public class Ventana_Hospitalizacion extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtDesc;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtDesc;
     private javax.swing.JTextField txtIdPacienteHos;
     // End of variables declaration//GEN-END:variables
 }
