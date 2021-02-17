@@ -56,7 +56,6 @@ public class Ventana_Proceso extends javax.swing.JInternalFrame {
         txtCIdPaciente = new javax.swing.JTextField();
         btnConsultarPaciente = new javax.swing.JButton();
         btnEnviarProceso = new javax.swing.JButton();
-        btnGenPDF = new javax.swing.JToggleButton();
 
         setClosable(true);
 
@@ -199,13 +198,6 @@ public class Ventana_Proceso extends javax.swing.JInternalFrame {
 
         btnEnviarProceso.setText("ENVIAR");
 
-        btnGenPDF.setText("Generar PDF");
-        btnGenPDF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenPDFActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,10 +205,7 @@ public class Ventana_Proceso extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnGenPDF)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEnviarProceso))
+                    .addComponent(btnEnviarProceso, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -230,18 +219,12 @@ public class Ventana_Proceso extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEnviarProceso)
-                    .addComponent(btnGenPDF))
+                .addComponent(btnEnviarProceso)
                 .addGap(12, 12, 12))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnGenPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenPDFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenPDFActionPerformed
 
     public JButton getBtnConsultarPaciente() {
         return btnConsultarPaciente;
@@ -405,20 +388,12 @@ public class Ventana_Proceso extends javax.swing.JInternalFrame {
         this.txtADescripcion = txtADescripcion;
     }
 
-    public JToggleButton getBtnGenPDF() {
-        return btnGenPDF;
-    }
-
-    public void setBtnGenPDF(JToggleButton btnGenPDF) {
-        this.btnGenPDF = btnGenPDF;
-    }
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultarPaciente;
     private javax.swing.JButton btnEnviarProceso;
-    private javax.swing.JToggleButton btnGenPDF;
     private javax.swing.JComboBox<String> cmbServicioPro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

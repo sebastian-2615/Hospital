@@ -106,8 +106,8 @@ public class Controlador implements ActionListener, Runnable
         objHC.getBtnEnviarDatosRecaudo().addActionListener(this);
         objSer.getBtnDescripcionServicios().addActionListener(this);
         objVHos.getBtnEnviarInformacion().addActionListener(this);
-        objVPro.getBtnGenPDF().addActionListener(this);
         objP.getBtnActualizar().addActionListener(this);
+        objP.getBtnRefrescar().addActionListener(this);
         objP.getBtnEliminar().addActionListener(this);
         objA.getBtnRegistrar().addActionListener(this);
         this.hc = new Historia_Clinica();
@@ -461,7 +461,12 @@ public class Controlador implements ActionListener, Runnable
                     ,objA.getTxtTelefonoPersona().getText(),null));
             JOptionPane.showMessageDialog(objA, objd.ActualizarPac(objA.getTxtIdentificacionPersona().getText()));
             objA.dispose();
+            //objP.getTblPacientes().setModel(objd.consultar());
+        }
+        if(ae.getSource().equals(objP.getBtnRefrescar()))
+        {
             
+            objP.getTblPacientes().setModel(objd.consultar());
         }
     }
     
