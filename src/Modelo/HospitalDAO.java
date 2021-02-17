@@ -112,7 +112,7 @@ public class HospitalDAO {
         }
       return mensaje;  
     }
-    public String insertar2(int x,Servicio objs, Examen obje,Historia_Clinica objHC){
+    public String insertarLab(int x,Servicio objs, Examen obje,Historia_Clinica objHC){
         String mensaje=""; 
         try {
             ConexionBD conexion=new ConexionBD();

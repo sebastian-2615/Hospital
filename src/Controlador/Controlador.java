@@ -324,7 +324,7 @@ public class Controlador implements ActionListener, Runnable
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_sangre);
-                    objd.insertar2(cont, objLab, ex_sangre, objH_C);
+                    objd.insertarLab(cont, objLab, ex_sangre, objH_C);
                     break;
                 case 2:
                     objH_C = new Historia_Clinica();
@@ -340,7 +340,7 @@ public class Controlador implements ActionListener, Runnable
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_orina);
-                    objd.insertar2(cont, objLab, ex_orina, objH_C);
+                    objd.insertarLab(cont, objLab, ex_orina, objH_C);
                     break;
                 case 3:
                     objH_C = new Historia_Clinica();
@@ -356,7 +356,7 @@ public class Controlador implements ActionListener, Runnable
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_coprologico);
-                    objd.insertar2(cont, objLab, ex_coprologico, objH_C);
+                    objd.insertarLab(cont, objLab, ex_coprologico, objH_C);
                     break;
                 case 4:
                     objH_C = new Historia_Clinica();
@@ -372,7 +372,7 @@ public class Controlador implements ActionListener, Runnable
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_optometria);
-                    objd.insertar2(cont, objLab, ex_optometria, objH_C);
+                    objd.insertarLab(cont, objLab, ex_optometria, objH_C);
                     break;
                 case 5:
                     objH_C = new Historia_Clinica();
@@ -388,7 +388,7 @@ public class Controlador implements ActionListener, Runnable
                     objH_C.setServicio(objLab);
                     objRecaudo.getLista_H().add(objH_C);
                     escribirDatosExa(ex_odontologia);
-                    objd.insertar2(cont, objLab, ex_odontologia, objH_C);
+                    objd.insertarLab(cont, objLab, ex_odontologia, objH_C);
                     break;
             }
             objd.insertarHC(objH_C);
