@@ -1,0 +1,6 @@
+Rosa ; 12345 ; Cra 78 ; 3193333333 ; Categoria_C
+Rosa ; 12345 ; Bosa ; 741852 ; Categoria_C
+Juan ; 963 ; Kennedy ; 75342 ; Categoria_B
+Pedro ; 987 ; Suba ; 789 ; Categoria_B
+Mary ; 4152 ; Usme ; 9584 ; Categoria_C
+Hugo ; 79659 ; Bosa ; 319533 ; Categoria_A

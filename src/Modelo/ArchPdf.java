@@ -41,14 +41,14 @@ public class ArchPdf {
     /*metodo que hace uso de la clase itext para manipular archivos PDF*/
    public void crear_PDF(/*Recibo recibo1, Recibo recibo2*/Historia_Clinica objh){
         //abre ventana de dialogo "guardar"
-        Colocar_Destino();
+        //Colocar_Destino();
         //si destino es diferente de null
-        if(this.ruta_destino!=null){
+        
             try {
                 // se crea instancia del documento
                 Document mipdf = new Document();
                 // se establece una instancia a un documento pdf
-                PdfWriter pw = PdfWriter.getInstance(mipdf, new FileOutputStream(this.ruta_destino + ".pdf"));
+                PdfWriter pw = PdfWriter.getInstance(mipdf, new FileOutputStream("src/PDF/"+objh.getPaciente().getNombre()+ ".pdf"));
                 mipdf.open();// se abre el documento
                 mipdf.addTitle("Recibo Entrada Parqueadero"); // se añade el titulo
                 /*mipdf.addAuthor(a); // se añade el autor del documento
@@ -69,7 +69,7 @@ public class ArchPdf {
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Main.class.getName()).log(null,"Error, ",ex.toString());
             }
-        }
+        
     }
     /* abre la ventana de dialogo GUARDAR*/
     public void Colocar_Destino(){

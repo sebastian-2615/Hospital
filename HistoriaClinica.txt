@@ -1,0 +1,10 @@
+6956606 ; 17/2/2021 ; Rosa ; 12345 ; Cra 78 ; 3193333333 ; Categoria_C ; Cita_Medicina_General
+ ;  ; 15000.0
+6527783 ; 17/2/2021 ; Juan ; 963 ; Kennedy ; 75342 ; Categoria_B ; Cita_Medicina_General
+ ;  ; 10000.0
+242888 ; 17/2/2021 ; Pedro ; 987 ; Suba ; 789 ; Categoria_B ; Vacunacion
+ ;  ; 10000.0
+1702793 ; 17/2/2021 ; Mary ; 4152 ; Usme ; 9584 ; Categoria_C ; Vacunacion
+ ;  ; 20000.0
+4246779 ; 17/2/2021 ; Hugo ; 79659 ; Bosa ; 319533 ; Categoria_A ; Cita_Medicina_General
+ ;  ; 5000.0

@@ -59,6 +59,7 @@ public class Controlador implements ActionListener, Runnable
     Hora hora;
     Thread hilo;
     Icon icono;
+    ArchPdf PDF;
     int posicionCliente, cont;
     
     /**
@@ -111,6 +112,7 @@ public class Controlador implements ActionListener, Runnable
         this.cont=1;
         this.hora = new Hora();
         this.hilo = new Thread(this);
+        this.PDF= new ArchPdf();
         
     }
     
@@ -303,22 +305,12 @@ public class Controlador implements ActionListener, Runnable
                     objRecaudo.getLista_H().add(objH_C);
                     break;
             }
+            PDF.crear_PDF(objH_C);
             try{
                 objd.insertarHC(objH_C);
             }catch(NullPointerException x){
                 
             }
-        }
-        
-        if(ae.getSource().equals(objVPro.getBtnGenPDF())){
-            ArchPdf PDF = new ArchPdf();
-            hc = new Historia_Clinica();
-            for (int i = 0; i < objRecaudo.getLista_H().size(); i++) {
-                if(objRecaudo.getLista_H().get(i).getPaciente().getId().equals(objVPro.getTxtCIdPaciente().getText())){
-                    hc=objRecaudo.getLista_H().get(i);
-                }
-            }
-            PDF.crear_PDF(hc);
         }
         
         if(ae.getSource().equals(objVL.getBtnEnviarLaboratorio()))
@@ -408,6 +400,7 @@ public class Controlador implements ActionListener, Runnable
             }
             objd.insertarHC(objH_C);
             escribirDatosHC(objH_C);
+            PDF.crear_PDF(objH_C);
             try{
                 String datos = con.leerDatosLab();
                 archivoTabla(datos, objVL.getTblExamenes());
