@@ -32,7 +32,7 @@ public class Ventana_HistoriasClinicas extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblLaboratorio = new javax.swing.JTable();
+        tblHC = new javax.swing.JTable();
         btnEliminar = new javax.swing.JButton();
         btnRefrescar = new javax.swing.JButton();
 
@@ -40,7 +40,7 @@ public class Ventana_HistoriasClinicas extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("LISTADO HISTORIAS CLINICAS"));
 
-        tblLaboratorio.setModel(new javax.swing.table.DefaultTableModel(
+        tblHC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -48,7 +48,7 @@ public class Ventana_HistoriasClinicas extends javax.swing.JInternalFrame {
                 "Id_Historia", "Fecha", "Id_Paciente", "Servicio"
             }
         ));
-        jScrollPane1.setViewportView(tblLaboratorio);
+        jScrollPane1.setViewportView(tblHC);
 
         btnEliminar.setText("ELIMINAR");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +120,7 @@ public class Ventana_HistoriasClinicas extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnRefrescar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblLaboratorio;
+    private javax.swing.JTable tblHC;
     // End of variables declaration//GEN-END:variables
 
     
@@ -133,13 +133,15 @@ public class Ventana_HistoriasClinicas extends javax.swing.JInternalFrame {
         this.btnEliminar = btnEliminar;
     }
 
-    public JTable getTblLaboratorio() {
-        return tblLaboratorio;
+    public JTable getTblHC() {
+        return tblHC;
     }
 
-    public void setTblLaboratorio(JTable tblLaboratorio) {
-        this.tblLaboratorio = tblLaboratorio;
+    public void setTblHC(JTable tblHC) {
+        this.tblHC = tblHC;
     }
+
+    
 
     public JButton getBtnRefrescar() {
         return btnRefrescar;

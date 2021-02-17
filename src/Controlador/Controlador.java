@@ -479,16 +479,30 @@ public class Controlador implements ActionListener, Runnable
         if(ae.getSource().equals(objVP.getOpclisHC()))
         {
             abrirVentana(objLH);
-            objLH.getTblLaboratorio().setModel(objd.consultarHC()); // Cambiar el nombre de la tabla
+            objLH.getTblHC().setModel(objd.consultarHC()); 
         }
         if(ae.getSource().equals(objLH.getBtnRefrescar()))
         {
-            objLH.getTblLaboratorio().setModel(objd.consultarHC());
+            objLH.getTblHC().setModel(objd.consultarHC());
         }
         if(ae.getSource().equals(objLH.getBtnEliminar()))
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
-            JOptionPane.showMessageDialog(objP, objd.EliminarPac(delete));
+            JOptionPane.showMessageDialog(objP, objd.EliminarHC(delete));
+        }
+        if(ae.getSource().equals(objVP.getOpclisLab()))
+        {
+            abrirVentana(objL);
+            objL.getTblLaboratorio().setModel(objd.consultarLab());
+        }
+        if(ae.getSource().equals(objL.getBtnRefrescar()))
+        {
+            objL.getTblLaboratorio().setModel(objd.consultarLab());
+        }
+        if(ae.getSource().equals(objL.getBtnEliminar()))
+        {
+            String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
+            JOptionPane.showMessageDialog(objP, objd.EliminarLab(delete));
         }
         
     }

@@ -32,7 +32,7 @@ public class Ventana_LisLaboratorio extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPacientes = new javax.swing.JTable();
+        tblLaboratorio = new javax.swing.JTable();
         btnEliminar = new javax.swing.JButton();
         btnRefrescar = new javax.swing.JButton();
 
@@ -40,7 +40,7 @@ public class Ventana_LisLaboratorio extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("LISTADO LABORATORIOS"));
 
-        tblPacientes.setModel(new javax.swing.table.DefaultTableModel(
+        tblLaboratorio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -48,7 +48,7 @@ public class Ventana_LisLaboratorio extends javax.swing.JInternalFrame {
                 "Numero", "Id_examen", "Id_paciente", "Nombre_examen"
             }
         ));
-        jScrollPane1.setViewportView(tblPacientes);
+        jScrollPane1.setViewportView(tblLaboratorio);
 
         btnEliminar.setText("ELIMINAR");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +118,7 @@ public class Ventana_LisLaboratorio extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnRefrescar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblPacientes;
+    private javax.swing.JTable tblLaboratorio;
     // End of variables declaration//GEN-END:variables
 
 
@@ -130,13 +130,14 @@ public class Ventana_LisLaboratorio extends javax.swing.JInternalFrame {
         this.btnEliminar = btnEliminar;
     }
 
-    public JTable getTblPacientes() {
-        return tblPacientes;
+    public JTable getTblLaboratorio() {
+        return tblLaboratorio;
     }
 
-    public void setTblPacientes(JTable tblPacientes) {
-        this.tblPacientes = tblPacientes;
+    public void setTblLaboratorio(JTable tblLaboratorio) {
+        this.tblLaboratorio = tblLaboratorio;
     }
+    
 
     public JButton getBtnRefrescar() {
         return btnRefrescar;
