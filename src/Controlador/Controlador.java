@@ -480,6 +480,7 @@ public class Controlador implements ActionListener, Runnable
         {
             
             abrirVentana(objLH);
+            objLH.getTblPacientes().setModel(objd.consultarHC()); // Cambiar el nombre de la tabla
         }
         if(ae.getSource().equals(objLH.getBtnRefrescar()))
         {
