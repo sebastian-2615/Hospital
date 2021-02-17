@@ -4,3 +4,4 @@ Juan ; 963 ; Kennedy ; 75342 ; Categoria_B
 Pedro ; 987 ; Suba ; 789 ; Categoria_B
 Mary ; 4152 ; Usme ; 9584 ; Categoria_C
 Hugo ; 79659 ; Bosa ; 319533 ; Categoria_A
+Leidy ; 45513 ; Bosa ; 314 ; Categoria_B

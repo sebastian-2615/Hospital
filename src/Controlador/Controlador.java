@@ -297,9 +297,10 @@ public class Controlador implements ActionListener, Runnable
                     abrirVentana(objVHos);
                     break;
             }
-            PDF.crear_PDF(objH_C);
+            
             try{
                 objd.insertarHC(objH_C);
+                PDF.crear_PDF(objH_C);
             }catch(NullPointerException x){
                 
             }
@@ -444,7 +445,7 @@ public class Controlador implements ActionListener, Runnable
             objHosp.setDescripcion(objVHos.getTxtDesc().getText());
             objH_C.setId_Historia(Integer.parseInt(generarId()));
             objH_C.setPaciente(lista_pacientes.get(posicionCliente));
-            objHosp.setFecha_salida(new Fecha());
+            objHosp.getFecha_salida().setAa(objHosp.getFecha_salida().getAa()+Integer.valueOf(objVHos.getTxtIdPacienteHos().getText()));
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
             PDF.crear_PDF(objH_C);
