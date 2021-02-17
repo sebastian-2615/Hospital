@@ -448,8 +448,8 @@ public class Controlador implements ActionListener, Runnable
             objHosp.getFecha_salida().setAa(objHosp.getFecha_salida().getAa()+Integer.valueOf(objVHos.getTxtIdPacienteHos().getText()));
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
-            PDF.crear_PDF(objH_C);
             objVHos.dispose();
+            PDF.crear_PDF(objH_C);
         }
 
     }
