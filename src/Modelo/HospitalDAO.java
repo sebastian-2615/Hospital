@@ -22,7 +22,27 @@ import javax.swing.table.DefaultTableModel;
 public class HospitalDAO {
    
     
+    Paciente objP;
 
+    public HospitalDAO() {
+        this.objP = new Paciente();
+    }
+
+    public HospitalDAO(Paciente objP) {
+        this.objP = objP;
+    }
+    
+
+    public Paciente getObjP() {
+        return objP;
+    }
+
+    public void setObjP(Paciente objP) {
+        this.objP = objP;
+    }
+    
+    
+    
     public DefaultTableModel consultar(){
          DefaultTableModel plantilla= new DefaultTableModel();
          ConexionBD con= new ConexionBD();
@@ -101,8 +121,7 @@ public class HospitalDAO {
             consulta.setString(1,String.valueOf(objHC.getId_Historia()));
             consulta.setString(2,objHC.getFecha().toString());
             consulta.setString(3,objHC.getPaciente().getId());
-            consulta.setString(4,objHC.getPaciente().getNombre());
-            consulta.setString(5,objHC.getServicio().getNombre_Servicio());
+            consulta.setString(4,objHC.getServicio().getNombre_Servicio());
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();
@@ -134,22 +153,22 @@ public class HospitalDAO {
       return mensaje;  
     }
      
-    public String Actualizar(Paciente objp){
+    public String ActualizarPac(String x){
         String mensaje=""; 
         try {
             ConexionBD conexion=new ConexionBD();
             PreparedStatement consulta = null;
             conexion.conectar();
-            JOptionPane.showMessageDialog(null, objp.toString());
+            JOptionPane.showMessageDialog(null, objP.getNombre());
             String instruccion= "update pacientes "
-                    +"set id=?, nombre=?, direccion=?, telefono=?, tipo_afiliacion=? where id='"
-                    +objp.getId()+"'";
+                    +"set nombre=?, direccion=?, telefono=? where id='"
+                    +x+"'";
             consulta=conexion.getConexion().prepareStatement(instruccion);
-            consulta.setString(1,objp.getId());
-            consulta.setString(2,objp.getNombre());
-            consulta.setString(3,objp.getDireccion());
-            consulta.setString(4,objp.getTelefono());
-            consulta.setString(5,objp.getTipo_afiliacion().Tipo());
+            //consulta.setString(1,objp.getId());
+            consulta.setString(1,objP.getNombre());
+            consulta.setString(2,objP.getDireccion());
+            consulta.setString(3,objP.getTelefono());
+            //consulta.setString(5,objP.getTipo_afiliacion().Tipo());
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();
@@ -178,4 +197,6 @@ public class HospitalDAO {
         }
       return mensaje;  
     }
+    
+    
 }

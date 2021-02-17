@@ -50,6 +50,7 @@ public class Controlador implements ActionListener, Runnable
     Ventana_Servicios objSer;
     Ventana_Hospitalizacion objVHos;
     Ventana_Pacientes objP;
+    Ventana_Actualizacion objA;
     Laboratorio objLab;
     Hospitalizacion objHosp;
     Paciente objPac;
@@ -87,6 +88,7 @@ public class Controlador implements ActionListener, Runnable
         this.objRecaudo = new Recaudo();
         this.objSer = new Ventana_Servicios();
         this.objP = new Ventana_Pacientes();
+        this.objA = new Ventana_Actualizacion();
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
         objVP.getOpcmHistoriaClinica().addActionListener(this);
@@ -107,6 +109,7 @@ public class Controlador implements ActionListener, Runnable
         objVPro.getBtnGenPDF().addActionListener(this);
         objP.getBtnActualizar().addActionListener(this);
         objP.getBtnEliminar().addActionListener(this);
+        objA.getBtnRegistrar().addActionListener(this);
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
         this.cont=1;
@@ -159,8 +162,6 @@ public class Controlador implements ActionListener, Runnable
                         objPac.setDireccion(objVReg.getTxtDireccionPersona().getText());
                         objPac.setTelefono(objVReg.getTxtTelefonoPersona().getText());
                         objPac.setTipo_afiliacion(objAfiliacion);
-                        lista_pacientes.add(objPac);
-                        escribirDatosPac(objPac);
                         JOptionPane.showMessageDialog(objVReg,objPac.toString());
                     }catch(NumberFormatException nfe)
                     {
@@ -183,8 +184,6 @@ public class Controlador implements ActionListener, Runnable
                                 objPac.setDireccion(objVReg.getTxtDireccionPersona().getText());
                                 objPac.setTelefono(objVReg.getTxtTelefonoPersona().getText());
                                 objPac.setTipo_afiliacion(objAfiliacion);
-                                lista_pacientes.add(objPac);
-                                escribirDatosPac(objPac);
                                 JOptionPane.showMessageDialog(objVReg,objPac.toString());
                             }catch(NumberFormatException nfe)
                             {
@@ -203,8 +202,8 @@ public class Controlador implements ActionListener, Runnable
                                 objPac.setDireccion(objVReg.getTxtDireccionPersona().getText());
                                 objPac.setTelefono(objVReg.getTxtTelefonoPersona().getText());
                                 objPac.setTipo_afiliacion(objAfiliacion);
-                                lista_pacientes.add(objPac);
-                                escribirDatosPac(objPac);
+                                
+                                
                                 JOptionPane.showMessageDialog(objVReg,objPac.toString());
                             }catch(NumberFormatException nfe)
                             {
@@ -225,7 +224,7 @@ public class Controlador implements ActionListener, Runnable
                                 objPac.setTelefono(objVReg.getTxtTelefonoPersona().getText());
                                 objPac.setTipo_afiliacion(objAfiliacion);
                                 lista_pacientes.add(objPac);
-                                escribirDatosPac(objPac);
+                                
                                 JOptionPane.showMessageDialog(objVReg,objPac.toString());
                             }catch(NumberFormatException nfe)
                             {
@@ -235,6 +234,8 @@ public class Controlador implements ActionListener, Runnable
                     }
                     break;
             }
+            escribirDatosPac(objPac);
+            lista_pacientes.add(objPac);
             objd.insertarPac(objPac);
             ActualizarReg();
             objVReg.dispose();
@@ -430,7 +431,10 @@ public class Controlador implements ActionListener, Runnable
         }
         if(ae.getSource().equals(objP.getBtnActualizar()))
         {
-            JOptionPane.showMessageDialog(objP, objd.Actualizar(objPac));
+            
+            EnviarDatos(objP);
+            abrirVentana(objA);
+            //JOptionPane.showMessageDialog(objP, objd.Actualizar(objPac));
         }
         if(ae.getSource().equals(objP.getBtnEliminar()))
         {
@@ -451,9 +455,22 @@ public class Controlador implements ActionListener, Runnable
             objVHos.dispose();
             PDF.crear_PDF(objH_C);
         }
-
+        if(ae.getSource().equals(objA.getBtnRegistrar()))
+        {
+            objd.setObjP(new Paciente(objA.getTxtNombrePersona().getText(),objA.getTxtIdentificacionPersona().getText(),objA.getTxtDireccionPersona().getText()
+                    ,objA.getTxtTelefonoPersona().getText(),null));
+            JOptionPane.showMessageDialog(objA, objd.ActualizarPac(objA.getTxtIdentificacionPersona().getText()));
+            
+        }
     }
-
+    
+    public void EnviarDatos(Ventana_Pacientes frmpac){
+        objA.getTxtIdentificacionPersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 0));
+        objA.getTxtIdentificacionPersona().setEnabled(false);
+        objA.getTxtNombrePersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 1));
+        objA.getTxtDireccionPersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 2));
+        objA.getTxtTelefonoPersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 3));
+    }
     /**
      * Metodo que realiza una busqueda para devolver la posicion del paciente que coicida con el documento 
      * @param id Se envia como parametro el id para que la busqueda de toda la lista sea posible
