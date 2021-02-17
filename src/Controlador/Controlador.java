@@ -313,6 +313,7 @@ public class Controlador implements ActionListener, Runnable
             }catch(NullPointerException x){
                 
             }
+            objVPro.dispose();
         }
         
         if(ae.getSource().equals(objVL.getBtnEnviarLaboratorio()))
@@ -479,8 +480,9 @@ public class Controlador implements ActionListener, Runnable
         }
         if(ae.getSource().equals(objVP.getOpclisHC()))
         {
+            objLH.getTblHC().setModel(objd.consultarHC());
             abrirVentana(objLH);
-            objLH.getTblHC().setModel(objd.consultarHC()); 
+             
         }
         if(ae.getSource().equals(objLH.getBtnRefrescar()))
         {

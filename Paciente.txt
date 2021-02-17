@@ -10,3 +10,5 @@ Sara ; 123 ; Suba ; 951 ; Categoria_A
 Maria ; 147 ; Kennedy ; 8585 ; Categoria_A
 Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A
 Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A
+Juan ; 12345 ; Usme ; 963852 ; Categoria_B
+Rosa ; 456789 ; Soacha ; 741852 ; Categoria_C
