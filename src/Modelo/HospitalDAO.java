@@ -95,6 +95,32 @@ public class HospitalDAO {
         return plantilla;
     }
     
+    public DefaultTableModel consultarLab(){
+         DefaultTableModel plantilla= new DefaultTableModel();
+         ConexionBD con= new ConexionBD();
+        try {
+           con.conectar();
+           Statement consulta= con.getConexion().createStatement();
+            ResultSet datos= consulta.executeQuery("select * from laboratorio");
+            ResultSetMetaData campos=datos.getMetaData();
+            for (int i = 1; i <= campos.getColumnCount(); i++) {
+                plantilla.addColumn(campos.getColumnName(i));
+            }
+            while(datos.next()){
+             Object fila[]=new Object[campos.getColumnCount()];
+                for (int i = 0; i < campos.getColumnCount(); i++) {
+                   fila[i]=datos.getObject(i+1);
+                }
+                plantilla.addRow(fila);
+            }
+            datos.close();
+            con.getConexion().close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+        return plantilla;
+    }
+    
     /*public String insertar(Recibo objr)  {
       String mensaje="";  
         try {

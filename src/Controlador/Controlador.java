@@ -478,14 +478,12 @@ public class Controlador implements ActionListener, Runnable
         }
         if(ae.getSource().equals(objVP.getOpclisHC()))
         {
-            
             abrirVentana(objLH);
-            objLH.getTblPacientes().setModel(objd.consultarHC()); // Cambiar el nombre de la tabla
+            objLH.getTblLaboratorio().setModel(objd.consultarHC()); // Cambiar el nombre de la tabla
         }
         if(ae.getSource().equals(objLH.getBtnRefrescar()))
         {
-            
-            
+            objLH.getTblLaboratorio().setModel(objd.consultarHC());
         }
     }
     
