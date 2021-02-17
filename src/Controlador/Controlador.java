@@ -293,6 +293,7 @@ public class Controlador implements ActionListener, Runnable
                     objServicio = new Vacunacion();
                     objServicio.setNombre_Servicio("VACUNACION");
                     objServicio.setId_Servicio(generarId());
+                    objServicio.setDescripcion(objVPro.getTxtADescripcion().getText());
                     objH_C.setId_Historia(Integer.parseInt(generarId()));
                     objH_C.setPaciente(lista_pacientes.get(devuelvePosicion(objVPro.getTxtCIdPaciente().getText())));
                     objH_C.setServicio(objServicio);
