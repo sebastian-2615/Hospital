@@ -294,15 +294,7 @@ public class Controlador implements ActionListener, Runnable
                     abrirVentana(objVL);
                     break;
                 case 4:
-                    
-                    objHosp = new Hospitalizacion();
-                    objHosp.setNombre_Servicio("HOSPITALIZACION");
-                    objHosp.setId_Servicio(generarId());
-                    objH_C.setId_Historia(Integer.parseInt(generarId()));
-                    objH_C.setPaciente(lista_pacientes.get(posicionCliente));
-                    objHosp.setFecha_salida(new Fecha());
-                    objH_C.setServicio(objHosp);
-                    objRecaudo.getLista_H().add(objH_C);
+                    abrirVentana(objVHos);
                     break;
             }
             PDF.crear_PDF(objH_C);
@@ -461,6 +453,18 @@ public class Controlador implements ActionListener, Runnable
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
             JOptionPane.showMessageDialog(objP, objd.Eliminar(delete));
+        }
+        if(ae.getSource().equals(objVHos.getBtnEnviarInformacion()))
+        {
+            objHosp = new Hospitalizacion();
+            objHosp.setNombre_Servicio("HOSPITALIZACION");
+            objHosp.setId_Servicio(generarId());
+            objHosp.getDescripcion();
+            objH_C.setId_Historia(Integer.parseInt(generarId()));
+            objH_C.setPaciente(lista_pacientes.get(posicionCliente));
+            objHosp.setFecha_salida(new Fecha());
+            objH_C.setServicio(objHosp);
+            objRecaudo.getLista_H().add(objH_C);
         }
 
     }
