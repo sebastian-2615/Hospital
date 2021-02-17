@@ -3,6 +3,8 @@ package Controlador;
 
 import Modelo.*;
 import Vista.*;
+import java.awt.Image;
+//import com.itextpdf.text.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
@@ -10,6 +12,8 @@ import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -54,6 +58,7 @@ public class Controlador implements ActionListener, Runnable
     HospitalDAO objd;
     Hora hora;
     Thread hilo;
+    Icon icono;
     int posicionCliente, cont;
     
     /**
@@ -106,6 +111,7 @@ public class Controlador implements ActionListener, Runnable
         this.cont=1;
         this.hora = new Hora();
         this.hilo = new Thread(this);
+        
     }
     
     /**
@@ -115,6 +121,11 @@ public class Controlador implements ActionListener, Runnable
     {
         objVP.setVisible(true);
         hilo.start();
+        ImageIcon imagen = new ImageIcon("src/Imagenes/Fondo.jpg");
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(objVP.getLblimg().getWidth()
+                , objVP.getLblimg().getHeight(), Image.SCALE_DEFAULT));
+        objVP.getLblimg().setIcon(icono);
+        
         objVP.setLocationRelativeTo(null);
     }
     

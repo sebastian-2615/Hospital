@@ -38,6 +38,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         pndEscritorio = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
         lblHora = new javax.swing.JLabel();
+        lblimg = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         opcmSalir = new javax.swing.JMenuItem();
@@ -66,6 +67,10 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         pndEscritorio.add(jToolBar1);
         jToolBar1.setBounds(0, 660, 810, 30);
+
+        lblimg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.jpg"))); // NOI18N
+        pndEscritorio.add(lblimg);
+        lblimg.setBounds(0, 46, 810, 610);
 
         jMenu2.setText("Archivo");
 
@@ -250,6 +255,14 @@ public class Ventana_Principal extends javax.swing.JFrame {
         this.opcmHospitalizacion = opcmHospitalizacion;
     }
 
+    public JLabel getLblimg() {
+        return lblimg;
+    }
+
+    public void setLblimg(JLabel lblimg) {
+        this.lblimg = lblimg;
+    }
+
     
     
     
@@ -323,6 +336,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblHora;
+    private javax.swing.JLabel lblimg;
     private javax.swing.JMenu menListados;
     private javax.swing.JMenuItem opcmHistoriaClinica;
     private javax.swing.JMenuItem opcmHospitalizacion;
