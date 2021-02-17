@@ -51,6 +51,8 @@ public class Controlador implements ActionListener, Runnable
     Ventana_Hospitalizacion objVHos;
     Ventana_Pacientes objP;
     Ventana_Actualizacion objA;
+    Ventana_HistoriasClinicas objLH;
+    Ventana_LisLaboratorio objL;
     Laboratorio objLab;
     Hospitalizacion objHosp;
     Paciente objPac;
@@ -89,6 +91,8 @@ public class Controlador implements ActionListener, Runnable
         this.objSer = new Ventana_Servicios();
         this.objP = new Ventana_Pacientes();
         this.objA = new Ventana_Actualizacion();
+        this.objLH = new Ventana_HistoriasClinicas();
+        this.objL = new Ventana_LisLaboratorio();
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
         objVP.getOpcmHistoriaClinica().addActionListener(this);
@@ -110,6 +114,10 @@ public class Controlador implements ActionListener, Runnable
         objP.getBtnRefrescar().addActionListener(this);
         objP.getBtnEliminar().addActionListener(this);
         objA.getBtnRegistrar().addActionListener(this);
+        objLH.getBtnEliminar().addActionListener(this);
+        objLH.getBtnRefrescar().addActionListener(this);
+        objL.getBtnEliminar().addActionListener(this);
+        objL.getBtnRefrescar().addActionListener(this);
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
         this.cont=1;
@@ -466,7 +474,17 @@ public class Controlador implements ActionListener, Runnable
         if(ae.getSource().equals(objP.getBtnRefrescar()))
         {
             
-            objP.getTblPacientes().setModel(objd.consultar());
+            objP.getTblPacientes().setModel(objd.consultarPac());
+        }
+        if(ae.getSource().equals(objVP.getOpclisHC()))
+        {
+            
+            abrirVentana(objLH);
+        }
+        if(ae.getSource().equals(objLH.getBtnRefrescar()))
+        {
+            
+            
         }
     }
     

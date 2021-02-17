@@ -43,7 +43,7 @@ public class HospitalDAO {
     
     
     
-    public DefaultTableModel consultar(){
+    public DefaultTableModel consultarPac(){
          DefaultTableModel plantilla= new DefaultTableModel();
          ConexionBD con= new ConexionBD();
         try {
