@@ -447,7 +447,7 @@ public class Controlador implements ActionListener, Runnable
         if(ae.getSource().equals(objP.getBtnEliminar()))
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
-            JOptionPane.showMessageDialog(objP, objd.Eliminar(delete));
+            JOptionPane.showMessageDialog(objP, objd.EliminarPac(delete));
         }
         if(ae.getSource().equals(objVHos.getBtnEnviarInformacion()))
         {
@@ -485,6 +485,12 @@ public class Controlador implements ActionListener, Runnable
         {
             objLH.getTblLaboratorio().setModel(objd.consultarHC());
         }
+        if(ae.getSource().equals(objLH.getBtnEliminar()))
+        {
+            String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
+            JOptionPane.showMessageDialog(objP, objd.EliminarPac(delete));
+        }
+        
     }
     
     public void EnviarDatos(Ventana_Pacientes frmpac){

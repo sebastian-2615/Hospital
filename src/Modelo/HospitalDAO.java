@@ -231,7 +231,7 @@ public class HospitalDAO {
       return mensaje;  
     }
     
-    public String Eliminar(String com){
+    public String EliminarPac(String com){
         String mensaje=""; 
         try {
             ConexionBD conexion=new ConexionBD();
@@ -239,6 +239,25 @@ public class HospitalDAO {
             conexion.conectar();
             JOptionPane.showMessageDialog(null, com);
             String instruccion= "delete from pacientes where id='"+com+"'";
+            consulta=conexion.getConexion().prepareStatement(instruccion);
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
+    
+    public String EliminarHC(String com){
+        String mensaje=""; 
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            JOptionPane.showMessageDialog(null, com);
+            String instruccion= "delete from historia_clinica where id_paciente='"+com+"'";
             consulta=conexion.getConexion().prepareStatement(instruccion);
             consulta.execute();
             mensaje="Registro exitoso...";
