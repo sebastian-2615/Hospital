@@ -109,7 +109,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

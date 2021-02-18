@@ -49,10 +49,7 @@ public class Controlador implements ActionListener, Runnable
     Ventana_HistoriaClinica objHC;
     Ventana_Servicios objSer;
     Ventana_Hospitalizacion objVHos;
-    //Ventana_Pacientes objP;
     Ventana_Actualizacion objA;
-    //Ventana_HistoriasClinicas objLH;
-    //Ventana_LisLaboratorio objL;
     Ventana_Listado objL;
     Laboratorio objLab;
     Hospitalizacion objHosp;
@@ -92,19 +89,11 @@ public class Controlador implements ActionListener, Runnable
         this.objSer = new Ventana_Servicios();
         this.objL = new Ventana_Listado();
         this.objA = new Ventana_Actualizacion();
-        /*this.objP = new Ventana_Pacientes();
-        
-        this.objLH = new Ventana_HistoriasClinicas();
-        this.objL = new Ventana_LisLaboratorio();*/
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
         objVP.getOpcmPaciente().addActionListener(this);
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
-       /* objVP.getOpclisPac().addActionListener(this);
-        objVP.getOpclisHC().addActionListener(this);
-        objVP.getOpclisLab().addActionListener(this);
-        */
         objVP.getOpcListados().addActionListener(this);
         objVPro.getBtnConsultarPaciente().addActionListener(this);
         objVPro.getBtnEnviarProceso().addActionListener(this);
@@ -120,14 +109,7 @@ public class Controlador implements ActionListener, Runnable
         objL.getBtnRefrescarHistoria().addActionListener(this);
         objL.getBtnRefrescarLab().addActionListener(this);
         objL.getBtnRefrescarPaciente().addActionListener(this);
-        /* objP.getBtnActualizar().addActionListener(this);
-        objP.getBtnRefrescar().addActionListener(this);
-        objP.getBtnEliminar().addActionListener(this);*/
         objA.getBtnRegistrar().addActionListener(this);
-        /*objLH.getBtnEliminar().addActionListener(this);
-        objLH.getBtnRefrescar().addActionListener(this);
-        objL.getBtnEliminar().addActionListener(this);
-        objL.getBtnRefrescar().addActionListener(this);*/
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
         this.cont=1;
@@ -469,6 +451,7 @@ public class Controlador implements ActionListener, Runnable
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
             PDF.crear_PDF(objH_C);
+            objd.insertarHC(objH_C);
             objVHos.dispose();
             
         }
