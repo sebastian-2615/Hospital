@@ -95,7 +95,6 @@ public class Controlador implements ActionListener, Runnable
         this.objL = new Ventana_LisLaboratorio();
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
-        objVP.getOpcmHistoriaClinica().addActionListener(this);
         objVP.getOpcmPaciente().addActionListener(this);
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);

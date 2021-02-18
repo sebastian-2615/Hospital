@@ -45,9 +45,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         opcmPaciente = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        opcmHistoriaClinica = new javax.swing.JMenuItem();
         opcmRecaudo = new javax.swing.JMenuItem();
-        opcmHospitalizacion = new javax.swing.JMenuItem();
         menListados = new javax.swing.JMenu();
         OpclisPac = new javax.swing.JMenuItem();
         OpclisHC = new javax.swing.JMenuItem();
@@ -88,9 +86,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         jMenu1.setText("Consultar");
 
-        opcmHistoriaClinica.setText("Historia Clinica");
-        jMenu1.add(opcmHistoriaClinica);
-
         opcmRecaudo.setText("Recaudo");
         opcmRecaudo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,14 +93,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(opcmRecaudo);
-
-        opcmHospitalizacion.setText("Hospitalización");
-        opcmHospitalizacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcmHospitalizacionActionPerformed(evt);
-            }
-        });
-        jMenu1.add(opcmHospitalizacion);
 
         jMenuBar1.add(jMenu1);
 
@@ -149,10 +136,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_opcmRecaudoActionPerformed
 
-    private void opcmHospitalizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcmHospitalizacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcmHospitalizacionActionPerformed
-
     private void OpclisLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpclisLabActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_OpclisLabActionPerformed
@@ -191,14 +174,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
     public void setjMenuBar1(JMenuBar jMenuBar1) {
         this.jMenuBar1 = jMenuBar1;
-    }
-
-    public JMenuItem getOpcmHistoriaClinica() {
-        return opcmHistoriaClinica;
-    }
-
-    public void setOpcmHistoriaClinica(JMenuItem opcmHistoriaClinica) {
-        this.opcmHistoriaClinica = opcmHistoriaClinica;
     }
 
     public JMenu getjMenu2() {
@@ -245,14 +220,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
     public void setPndEscritorio(JDesktopPane pndEscritorio) {
         this.pndEscritorio = pndEscritorio;
-    }
-
-    public JMenuItem getOpcmHospitalizacion() {
-        return opcmHospitalizacion;
-    }
-
-    public void setOpcmHospitalizacion(JMenuItem opcmHospitalizacion) {
-        this.opcmHospitalizacion = opcmHospitalizacion;
     }
 
     public JLabel getLblimg() {
@@ -338,8 +305,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lblHora;
     private javax.swing.JLabel lblimg;
     private javax.swing.JMenu menListados;
-    private javax.swing.JMenuItem opcmHistoriaClinica;
-    private javax.swing.JMenuItem opcmHospitalizacion;
     private javax.swing.JMenuItem opcmPaciente;
     private javax.swing.JMenuItem opcmRecaudo;
     private javax.swing.JMenuItem opcmSalir;

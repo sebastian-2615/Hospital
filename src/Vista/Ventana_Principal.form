@@ -38,25 +38,12 @@
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="opcmHistoriaClinica">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Historia Clinica"/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="opcmRecaudo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Recaudo"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcmRecaudoActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="opcmHospitalizacion">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Hospitalizaci&#xf3;n"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcmHospitalizacionActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
