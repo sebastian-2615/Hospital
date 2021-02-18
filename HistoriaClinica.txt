@@ -16,3 +16,5 @@
  ; MALESTAR GENETAL  ; 15000.0
 1842622 ; 17/2/2021 ; Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A ; Vacunacion
  ;  ; 5000.0
+5300969 ; 17/2/2021 ; Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A ; Vacunacion
+ ; SARS-COV-2 ; 5000.0

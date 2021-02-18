@@ -99,7 +99,6 @@ public class Controlador implements ActionListener, Runnable
         objVP.getOpcmPaciente().addActionListener(this);
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
-        objVP.getOpcmHospitalizacion().addActionListener(this);
         objVP.getOpclisPac().addActionListener(this);
         objVP.getOpclisHC().addActionListener(this);
         objVP.getOpclisLab().addActionListener(this);
@@ -247,9 +246,6 @@ public class Controlador implements ActionListener, Runnable
             objd.insertarPac(objPac);
             ActualizarReg();
             objVReg.dispose();
-        }
-        if(ae.getSource().equals(objVP.getOpcmHistoriaClinica()))
-        {
             abrirVentana(objVPro);
         }
         if(ae.getSource().equals(objVPro.getBtnConsultarPaciente()))
@@ -413,11 +409,6 @@ public class Controlador implements ActionListener, Runnable
             }
             objVPro.dispose();
         }
-        if(ae.getSource().equals(objVP.getOpcmHospitalizacion()))
-        {
-            abrirVentana(objVHos);
-        }
-        
         
         if(ae.getSource().equals(objVP.getOpcmRecaudo()))
         {
@@ -463,8 +454,9 @@ public class Controlador implements ActionListener, Runnable
             objHosp.getFecha_salida().setAa(objHosp.getFecha_salida().getAa()+Integer.valueOf(objVHos.getTxtIdPacienteHos().getText()));
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
-            objVHos.dispose();
             PDF.crear_PDF(objH_C);
+            objVHos.dispose();
+            
         }
         if(ae.getSource().equals(objA.getBtnRegistrar()))
         {
