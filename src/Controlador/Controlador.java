@@ -49,10 +49,11 @@ public class Controlador implements ActionListener, Runnable
     Ventana_HistoriaClinica objHC;
     Ventana_Servicios objSer;
     Ventana_Hospitalizacion objVHos;
-    Ventana_Pacientes objP;
+    //Ventana_Pacientes objP;
     Ventana_Actualizacion objA;
-    Ventana_HistoriasClinicas objLH;
-    Ventana_LisLaboratorio objL;
+    //Ventana_HistoriasClinicas objLH;
+    //Ventana_LisLaboratorio objL;
+    Ventana_Listado objL;
     Laboratorio objLab;
     Hospitalizacion objHosp;
     Paciente objPac;
@@ -89,18 +90,22 @@ public class Controlador implements ActionListener, Runnable
         this.objHC = new Ventana_HistoriaClinica();
         this.objRecaudo = new Recaudo();
         this.objSer = new Ventana_Servicios();
-        this.objP = new Ventana_Pacientes();
+        this.objL = new Ventana_Listado();
         this.objA = new Ventana_Actualizacion();
+        /*this.objP = new Ventana_Pacientes();
+        
         this.objLH = new Ventana_HistoriasClinicas();
-        this.objL = new Ventana_LisLaboratorio();
+        this.objL = new Ventana_LisLaboratorio();*/
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
         objVP.getOpcmPaciente().addActionListener(this);
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
-        objVP.getOpclisPac().addActionListener(this);
+       /* objVP.getOpclisPac().addActionListener(this);
         objVP.getOpclisHC().addActionListener(this);
         objVP.getOpclisLab().addActionListener(this);
+        */
+        objVP.getOpcListados().addActionListener(this);
         objVPro.getBtnConsultarPaciente().addActionListener(this);
         objVPro.getBtnEnviarProceso().addActionListener(this);
         objVReg.getBtnRegistrar().addActionListener(this);
@@ -108,14 +113,21 @@ public class Controlador implements ActionListener, Runnable
         objHC.getBtnEnviarDatosRecaudo().addActionListener(this);
         objSer.getBtnDescripcionServicios().addActionListener(this);
         objVHos.getBtnEnviarInformacion().addActionListener(this);
-        objP.getBtnActualizar().addActionListener(this);
+        objL.getBtnActualizarPaciente().addActionListener(this);
+        objL.getBtnEliminarHistoria().addActionListener(this);
+        objL.getBtnEliminarLab().addActionListener(this);
+        objL.getBtnEliminarPaciente().addActionListener(this);
+        objL.getBtnRefrescarHistoria().addActionListener(this);
+        objL.getBtnRefrescarLab().addActionListener(this);
+        objL.getBtnRefrescarPaciente().addActionListener(this);
+        /* objP.getBtnActualizar().addActionListener(this);
         objP.getBtnRefrescar().addActionListener(this);
-        objP.getBtnEliminar().addActionListener(this);
+        objP.getBtnEliminar().addActionListener(this);*/
         objA.getBtnRegistrar().addActionListener(this);
-        objLH.getBtnEliminar().addActionListener(this);
+        /*objLH.getBtnEliminar().addActionListener(this);
         objLH.getBtnRefrescar().addActionListener(this);
         objL.getBtnEliminar().addActionListener(this);
-        objL.getBtnRefrescar().addActionListener(this);
+        objL.getBtnRefrescar().addActionListener(this);*/
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
         this.cont=1;
@@ -424,23 +436,26 @@ public class Controlador implements ActionListener, Runnable
                 objVP.dispose();
             }
         }
-        if(ae.getSource().equals(objVP.getOpclisPac()))
+        if(ae.getSource().equals(objVP.getOpcListados()))
         {
             
-            abrirVentana(objP);
-            objP.getTblPacientes().setModel(objd.consultarPac());
+            abrirVentana(objL);
+            objL.getTblPacientes().setModel(objd.consultarPac());
+            objL.getTblHC().setModel(objd.consultarHC());
+            objL.getTblLaboratorio().setModel(objd.consultarLab());
         }
-        if(ae.getSource().equals(objP.getBtnActualizar()))
+
+        if(ae.getSource().equals(objL.getBtnActualizarPaciente()))
         {
             
-            EnviarDatos(objP);
+            EnviarDatos(objL);
             abrirVentana(objA);
             //JOptionPane.showMessageDialog(objP, objd.Actualizar(objPac));
         }
-        if(ae.getSource().equals(objP.getBtnEliminar()))
+        if(ae.getSource().equals(objL.getBtnEliminarPaciente()))
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
-            JOptionPane.showMessageDialog(objP, objd.EliminarPac(delete));
+            JOptionPane.showMessageDialog(objL, objd.EliminarPac(delete));
         }
         if(ae.getSource().equals(objVHos.getBtnEnviarInformacion()))
         {
@@ -450,7 +465,7 @@ public class Controlador implements ActionListener, Runnable
             objHosp.setDescripcion(objVHos.getTxtDesc().getText());
             objH_C.setId_Historia(Integer.parseInt(generarId()));
             objH_C.setPaciente(lista_pacientes.get(posicionCliente));
-            objHosp.getFecha_salida().setAa(objHosp.getFecha_salida().getAa()+Integer.valueOf(objVHos.getTxtIdPacienteHos().getText()));
+            objHosp.getFecha_salida().setDd(objHosp.getFecha_salida().getDd()+Integer.valueOf(objVHos.getTxtIdPacienteHos().getText()));
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
             PDF.crear_PDF(objH_C);
@@ -465,44 +480,35 @@ public class Controlador implements ActionListener, Runnable
             objA.dispose();
             //objP.getTblPacientes().setModel(objd.consultar());
         }
-        if(ae.getSource().equals(objP.getBtnRefrescar()))
+        if(ae.getSource().equals(objL.getBtnRefrescarPaciente()))
         {
             
-            objP.getTblPacientes().setModel(objd.consultarPac());
+            objL.getTblPacientes().setModel(objd.consultarPac());
         }
-        if(ae.getSource().equals(objVP.getOpclisHC()))
+        
+        if(ae.getSource().equals(objL.getBtnRefrescarHistoria()))
         {
-            objLH.getTblHC().setModel(objd.consultarHC());
-            abrirVentana(objLH);
-             
+            objL.getTblHC().setModel(objd.consultarHC());
         }
-        if(ae.getSource().equals(objLH.getBtnRefrescar()))
-        {
-            objLH.getTblHC().setModel(objd.consultarHC());
-        }
-        if(ae.getSource().equals(objLH.getBtnEliminar()))
+        if(ae.getSource().equals(objL.getBtnEliminarHistoria()))
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
-            JOptionPane.showMessageDialog(objP, objd.EliminarHC(delete));
+            JOptionPane.showMessageDialog(objL, objd.EliminarHC(delete));
         }
-        if(ae.getSource().equals(objVP.getOpclisLab()))
-        {
-            abrirVentana(objL);
-            objL.getTblLaboratorio().setModel(objd.consultarLab());
-        }
-        if(ae.getSource().equals(objL.getBtnRefrescar()))
+        
+        if(ae.getSource().equals(objL.getBtnRefrescarLab()))
         {
             objL.getTblLaboratorio().setModel(objd.consultarLab());
         }
-        if(ae.getSource().equals(objL.getBtnEliminar()))
+        if(ae.getSource().equals(objL.getBtnEliminarLab()))
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
-            JOptionPane.showMessageDialog(objP, objd.EliminarLab(delete));
+            JOptionPane.showMessageDialog(objL, objd.EliminarLab(delete));
         }
         
     }
     
-    public void EnviarDatos(Ventana_Pacientes frmpac){
+    public void EnviarDatos(Ventana_Listado frmpac){
         objA.getTxtIdentificacionPersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 0));
         objA.getTxtIdentificacionPersona().setEnabled(false);
         objA.getTxtNombrePersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 1));

@@ -46,30 +46,10 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcmRecaudoActionPerformed"/>
               </Events>
             </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="menListados">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Listados"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="OpclisPac">
+            <MenuItem class="javax.swing.JMenuItem" name="opcListados">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listado Pacientes"/>
+                <Property name="text" type="java.lang.String" value="Listado"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="OpclisHC">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Listado Historia Clinica"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="OpclisLab">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Listado Laboratorio"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OpclisLabActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -99,14 +79,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pndEscritorio" pref="808" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="pndEscritorio" min="-2" pref="810" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="pndEscritorio" min="-2" pref="688" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="pndEscritorio" pref="685" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -135,7 +118,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="   00:00:00"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Default Cursor"/>
@@ -152,7 +135,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="46" width="810" height="610"/>
+              <AbsoluteConstraints x="0" y="36" width="810" height="630"/>
             </Constraint>
           </Constraints>
         </Component>

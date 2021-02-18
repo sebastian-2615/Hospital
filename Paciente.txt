@@ -14,3 +14,7 @@ Juan ; 12345 ; Usme ; 963852 ; Categoria_B
 Rosa ; 456789 ; Soacha ; 741852 ; Categoria_C
 Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A
 Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A
+paula ; 123 ; crra81 ; 218 ; Categoria_A
+paula ; 123 ; crra81 ; 218 ; Categoria_A
+paula ; 123 ; crra81 ; 2342234 ; Sisben
+Rosa ; 1234567 ; Cra 72 ; 75342 ; Categoria_C

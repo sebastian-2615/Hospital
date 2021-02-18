@@ -18,3 +18,5 @@
  ;  ; 5000.0
 5300969 ; 17/2/2021 ; Jhoan ; 1000363878 ; Bosa ; 3195333385 ; Categoria_A ; Vacunacion
  ; SARS-COV-2 ; 5000.0
+9887282 ; 18/2/2021 ; Rosa ; 1234567 ; Cra 72 ; 75342 ; Categoria_C ; Laboratorio
+ ; Miopia ; 35000.0
