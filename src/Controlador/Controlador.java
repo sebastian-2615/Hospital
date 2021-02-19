@@ -491,6 +491,10 @@ public class Controlador implements ActionListener, Runnable
         
     }
     
+    /**
+     * 
+     * @param frmpac 
+     */
     public void EnviarDatos(Ventana_Listado frmpac){
         objA.getTxtIdentificacionPersona().setText((String) frmpac.getTblPacientes().getValueAt(frmpac.getTblPacientes().getSelectedRow(), 0));
         objA.getTxtIdentificacionPersona().setEnabled(false);
@@ -638,7 +642,9 @@ public class Controlador implements ActionListener, Runnable
             cont++;
         }
     }
-    
+    /**
+     * 
+     */
     public void ActualizarReg(){
         objVReg.getTxtIdentificacionPersona().setText("");
         objVReg.getTxtNombrePersona().setText("");
@@ -646,7 +652,9 @@ public class Controlador implements ActionListener, Runnable
         objVReg.getTxtTelefonoPersona().setText("");
         
     }
-
+    /**
+     * 
+     */
     @Override
     public void run() {
         while(true){
