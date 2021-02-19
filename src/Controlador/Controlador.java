@@ -91,10 +91,10 @@ public class Controlador implements ActionListener, Runnable
         this.objA = new Ventana_Actualizacion();
         this.lista_pacientes = new ArrayList<>();
         this.con = new Conexion();
-        objVP.getOpcmPaciente().addActionListener(this);
         objVP.getOpcmSalir().addActionListener(this);
         objVP.getOpcmRecaudo().addActionListener(this);
         objVP.getOpcListados().addActionListener(this);
+        objVP.getBtnRegis().addActionListener(this);
         objVPro.getBtnConsultarPaciente().addActionListener(this);
         objVPro.getBtnEnviarProceso().addActionListener(this);
         objVReg.getBtnRegistrar().addActionListener(this);
@@ -126,7 +126,7 @@ public class Controlador implements ActionListener, Runnable
     {
         objVP.setVisible(true);
         hilo.start();
-        ImageIcon imagen = new ImageIcon("src/Imagenes/Fondo.jpg");
+        ImageIcon imagen = new ImageIcon("src/Imagenes/Fondo3.jpg");
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(objVP.getLblimg().getWidth()
                 , objVP.getLblimg().getHeight(), Image.SCALE_DEFAULT));
         objVP.getLblimg().setIcon(icono);
@@ -142,7 +142,7 @@ public class Controlador implements ActionListener, Runnable
     @Override
     public void actionPerformed(ActionEvent ae)
     {
-        if(ae.getSource().equals(objVP.getOpcmPaciente()))
+        if(ae.getSource().equals(objVP.getBtnRegis()))
         {
             abrirVentana(objVReg);
         }

@@ -51,6 +51,8 @@ public class Ventana_Listado extends javax.swing.JInternalFrame {
         btnEliminarLab = new javax.swing.JButton();
         btnRefrescarLab = new javax.swing.JButton();
 
+        setClosable(true);
+
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("LISTADO PACIENTES"));
 
         tblPacientes.setModel(new javax.swing.table.DefaultTableModel(

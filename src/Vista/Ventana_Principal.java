@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -37,13 +38,12 @@ public class Ventana_Principal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         pndEscritorio = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
+        btnRegis = new javax.swing.JButton();
         lblHora = new javax.swing.JLabel();
         lblimg = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         opcmSalir = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        opcmPaciente = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         opcmRecaudo = new javax.swing.JMenuItem();
         opcListados = new javax.swing.JMenuItem();
@@ -52,20 +52,29 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jToolBar1.setForeground(new java.awt.Color(255, 255, 255));
         jToolBar1.setRollover(true);
 
-        lblHora.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnRegis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icono4.png"))); // NOI18N
+        btnRegis.setFocusable(false);
+        btnRegis.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegis.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(btnRegis);
+
+        pndEscritorio.add(jToolBar1);
+        jToolBar1.setBounds(0, 0, 810, 50);
+
+        lblHora.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lblHora.setForeground(new java.awt.Color(0, 0, 0));
         lblHora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHora.setText("   00:00:00");
         lblHora.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jToolBar1.add(lblHora);
+        pndEscritorio.add(lblHora);
+        lblHora.setBounds(700, 730, 110, 30);
 
-        pndEscritorio.add(jToolBar1);
-        jToolBar1.setBounds(0, 660, 810, 30);
-
-        lblimg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.jpg"))); // NOI18N
+        lblimg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo3.jpg"))); // NOI18N
         pndEscritorio.add(lblimg);
-        lblimg.setBounds(0, 36, 810, 630);
+        lblimg.setBounds(0, 46, 820, 730);
 
         jMenu2.setText("Archivo");
 
@@ -73,13 +82,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
         jMenu2.add(opcmSalir);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Registrar");
-
-        opcmPaciente.setText("Paciente");
-        jMenu3.add(opcmPaciente);
-
-        jMenuBar1.add(jMenu3);
 
         jMenu1.setText("Consultar");
 
@@ -109,7 +111,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
+                .addComponent(pndEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -138,14 +140,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
     public void setjMenu1(JMenu jMenu1) {
         this.jMenu1 = jMenu1;
-    }
-
-    public JMenu getjMenu3() {
-        return jMenu3;
-    }
-
-    public void setjMenu3(JMenu jMenu3) {
-        this.jMenu3 = jMenu3;
     }
 
     public JMenuBar getjMenuBar1() {
@@ -190,9 +184,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
    
 
-    public JMenuItem getOpcmPaciente() {
-        return opcmPaciente;
-    }
+    
 
     public JDesktopPane getPndEscritorio() {
         return pndEscritorio;
@@ -217,9 +209,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public void setOpcmPaciente(JMenuItem opcmPaciente) {
-        this.opcmPaciente = opcmPaciente;
-    }
+    
 
     public JLabel getLblHora() {
         return lblHora;
@@ -270,21 +260,28 @@ public class Ventana_Principal extends javax.swing.JFrame {
     public void setjToolBar1(JToolBar jToolBar1) {
         this.jToolBar1 = jToolBar1;
     }
+
+    public JButton getBtnRegis() {
+        return btnRegis;
+    }
+
+    public void setBtnRegis(JButton btnRegis) {
+        this.btnRegis = btnRegis;
+    }
     
     
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegis;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel lblHora;
     private javax.swing.JLabel lblimg;
     private javax.swing.JMenuItem opcListados;
-    private javax.swing.JMenuItem opcmPaciente;
     private javax.swing.JMenuItem opcmRecaudo;
     private javax.swing.JMenuItem opcmSalir;
     private javax.swing.JDesktopPane pndEscritorio;
