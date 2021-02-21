@@ -20,3 +20,4 @@ paula ; 123 ; crra81 ; 2342234 ; Sisben
 Rosa ; 1234567 ; Cra 72 ; 75342 ; Categoria_C
 Milton ; 79659245 ; Transversal 12 ; 123456666 ; Sisben
 Pedro Pereira ; 987654 ; Av. Jimenez # 31 ; 968574 ; Categoria_C
+Antonio ; 79659289 ; Bosa ; 3125855583 ; Categoria_A

@@ -50,6 +50,12 @@ public class Ventana_Listado extends javax.swing.JInternalFrame {
         tblLaboratorio = new javax.swing.JTable();
         btnEliminarLab = new javax.swing.JButton();
         btnRefrescarLab = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblHosp = new javax.swing.JTable();
+        btnEliminarHosp = new javax.swing.JButton();
+        btnRefrescarHosp = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -270,6 +276,71 @@ public class Ventana_Listado extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Laboratorios", jPanel3);
 
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("LISTADO HOSPITALIZACION"));
+
+        tblHosp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id_Hospitalizacion", "Id_paciente", "Fecha_ingreso", "Fecha_salida"
+            }
+        ));
+        jScrollPane4.setViewportView(tblHosp);
+
+        btnEliminarHosp.setText("ELIMINAR");
+        btnEliminarHosp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarHospActionPerformed(evt);
+            }
+        });
+
+        btnRefrescarHosp.setText("REFRESCAR");
+        btnRefrescarHosp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefrescarHospActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(btnRefrescarHosp)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEliminarHosp))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRefrescarHosp)
+                    .addComponent(btnEliminarHosp))
+                .addContainerGap(103, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("hospitalizacion", jPanel7);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -318,13 +389,23 @@ public class Ventana_Listado extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRefrescarLabActionPerformed
 
+    private void btnEliminarHospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarHospActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarHospActionPerformed
+
+    private void btnRefrescarHospActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescarHospActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefrescarHospActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizarPaciente;
     private javax.swing.JButton btnEliminarHistoria;
+    private javax.swing.JButton btnEliminarHosp;
     private javax.swing.JButton btnEliminarLab;
     private javax.swing.JButton btnEliminarPaciente;
     private javax.swing.JButton btnRefrescarHistoria;
+    private javax.swing.JButton btnRefrescarHosp;
     private javax.swing.JButton btnRefrescarLab;
     private javax.swing.JButton btnRefrescarPaciente;
     private javax.swing.JPanel jPanel1;
@@ -333,11 +414,15 @@ public class Ventana_Listado extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblHC;
+    private javax.swing.JTable tblHosp;
     private javax.swing.JTable tblLaboratorio;
     private javax.swing.JTable tblPacientes;
     // End of variables declaration//GEN-END:variables
@@ -421,4 +506,29 @@ public class Ventana_Listado extends javax.swing.JInternalFrame {
     public void setTblPacientes(JTable tblPacientes) {
         this.tblPacientes = tblPacientes;
     }
+
+    public JButton getBtnEliminarHosp() {
+        return btnEliminarHosp;
+    }
+
+    public void setBtnEliminarHosp(JButton btnEliminarHosp) {
+        this.btnEliminarHosp = btnEliminarHosp;
+    }
+
+    public JButton getBtnRefrescarHosp() {
+        return btnRefrescarHosp;
+    }
+
+    public void setBtnRefrescarHosp(JButton btnRefrescarHosp) {
+        this.btnRefrescarHosp = btnRefrescarHosp;
+    }
+
+    public JTable getTblHosp() {
+        return tblHosp;
+    }
+
+    public void setTblHosp(JTable tblHosp) {
+        this.tblHosp = tblHosp;
+    }
+    
 }

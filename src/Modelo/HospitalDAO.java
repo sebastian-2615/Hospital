@@ -69,6 +69,32 @@ public class HospitalDAO {
         return plantilla;
     }
     
+    public DefaultTableModel consultarHos(){
+         DefaultTableModel plantilla= new DefaultTableModel();
+         ConexionBD con= new ConexionBD();
+        try {
+           con.conectar();
+           Statement consulta= con.getConexion().createStatement();
+            ResultSet datos= consulta.executeQuery("select * from hospitalizacion");
+            ResultSetMetaData campos=datos.getMetaData();
+            for (int i = 1; i <= campos.getColumnCount(); i++) {
+                plantilla.addColumn(campos.getColumnName(i));
+            }
+            while(datos.next()){
+             Object fila[]=new Object[campos.getColumnCount()];
+                for (int i = 0; i < campos.getColumnCount(); i++) {
+                   fila[i]=datos.getObject(i+1);
+                }
+                plantilla.addRow(fila);
+            }
+            datos.close();
+            con.getConexion().close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+        return plantilla;
+    }
+    
     public DefaultTableModel consultarHC(){
          DefaultTableModel plantilla= new DefaultTableModel();
          ConexionBD con= new ConexionBD();
@@ -153,6 +179,28 @@ public class HospitalDAO {
             consulta.setString(3,objp.getDireccion());
             consulta.setString(4,objp.getTelefono());
             consulta.setString(5,objp.getTipo_afiliacion().Tipo());
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
+    public String insertarHosp(Historia_Clinica objHC, Hospitalizacion objs){
+        String mensaje=""; 
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            String comando= "insert into hospitalizacion values(?,?,?,?)";
+            consulta=conexion.getConexion().prepareStatement(comando);
+            consulta.setString(1,objHC.getServicio().getId_Servicio());
+            consulta.setString(2,objHC.getPaciente().getId());
+            consulta.setString(3,objs.getFecha_ingreso().toString());
+            consulta.setString(4,objs.getFecha_salida().toString());
+            //consulta.setString(5,objp.getTipo_afiliacion().Tipo());
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();
@@ -287,5 +335,22 @@ public class HospitalDAO {
         }
       return mensaje;  
     }
-    
+    public String EliminarHosp(String com){
+        String mensaje="";
+        try {
+            ConexionBD conexion=new ConexionBD();
+            PreparedStatement consulta = null;
+            conexion.conectar();
+            JOptionPane.showMessageDialog(null, com);
+            String instruccion= "delete from hospitalizacion where id_paciente='"+com+"'";
+            consulta=conexion.getConexion().prepareStatement(instruccion);
+            consulta.execute();
+            mensaje="Registro exitoso...";
+            consulta.close();
+            conexion.getConexion().close();
+        } catch (SQLException ex) {
+           mensaje="Error al intentar insertar...\n"+ex;
+        }
+      return mensaje;  
+    }
 }

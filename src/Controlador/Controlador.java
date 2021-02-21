@@ -109,6 +109,8 @@ public class Controlador implements ActionListener, Runnable
         objL.getBtnRefrescarHistoria().addActionListener(this);
         objL.getBtnRefrescarLab().addActionListener(this);
         objL.getBtnRefrescarPaciente().addActionListener(this);
+        objL.getBtnRefrescarHosp().addActionListener(this);
+        objL.getBtnEliminarHosp().addActionListener(this);
         objA.getBtnRegistrar().addActionListener(this);
         this.hc = new Historia_Clinica();
         this.objd= new HospitalDAO();
@@ -425,6 +427,7 @@ public class Controlador implements ActionListener, Runnable
             objL.getTblPacientes().setModel(objd.consultarPac());
             objL.getTblHC().setModel(objd.consultarHC());
             objL.getTblLaboratorio().setModel(objd.consultarLab());
+            objL.getTblHosp().setModel(objd.consultarHos());
         }
 
         if(ae.getSource().equals(objL.getBtnActualizarPaciente()))
@@ -452,6 +455,7 @@ public class Controlador implements ActionListener, Runnable
             objRecaudo.getLista_H().add(objH_C);
             PDF.crear_PDF(objH_C);
             objd.insertarHC(objH_C);
+            objd.insertarHosp(objH_C, objHosp);
             objVHos.dispose();
             
         }
@@ -487,6 +491,15 @@ public class Controlador implements ActionListener, Runnable
         {
             String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
             JOptionPane.showMessageDialog(objL, objd.EliminarLab(delete));
+        }
+        if(ae.getSource().equals(objL.getBtnRefrescarHosp()))
+        {
+            objL.getTblHosp().setModel(objd.consultarHos());
+        }
+        if(ae.getSource().equals(objL.getBtnEliminarHosp()))
+        {
+            String delete = JOptionPane.showInputDialog("Documento del paciente a eliminar: ");
+            JOptionPane.showMessageDialog(objL, objd.EliminarHosp(delete));
         }
         
     }
