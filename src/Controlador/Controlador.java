@@ -435,7 +435,7 @@ public class Controlador implements ActionListener, Runnable
             
             EnviarDatos(objL);
             abrirVentana(objA);
-            //JOptionPane.showMessageDialog(objP, objd.Actualizar(objPac));
+           
         }
         if(ae.getSource().equals(objL.getBtnEliminarPaciente()))
         {
