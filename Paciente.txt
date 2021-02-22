@@ -36,3 +36,5 @@ awd ; 8536 ; dsf ; 745 ; Categoria_A
 Leidy ; 79659 ; Kennedy ; 754745 ; Sisben
 Jhoan ; 123 ; Bosa ; 312 ; Sisben
 sebas ; 321 ; afb ; 852 ; Categoria_A
+Maria ; 79659 ; Calle 52 ; 741 ; Categoria_A
+Jose ; 45513 ; cra 33 ; 77 ; Sisben
