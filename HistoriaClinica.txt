@@ -23,3 +23,7 @@
 3998523 ; 19/2/2021 ; Pedro Pereira ; 987654 ; Av. Jimenez # 31 ; 968574 ; Categoria_C ; Cita_Medicina_General
  ; El pacciente se encuentra excelente de salud, se le recomendo una mejor alimentacion y se le receto
 algunos medicamentos como apoyo  ; 15000.0
+59854 ; 22/2/2021 ; Jaime ; 145 ; Cra 33 ; 3597777777 ; Categoria_B ; Vacunacion
+ ; Tetano ; 10000.0
+9075324 ; 22/2/2021 ; Rocio Rodriguez ; 369121518 ; Cra 30  ; 300300300 ; Categoria_C ; Laboratorio
+ ; Conteo de globulos y colesterol  ; 12000.0

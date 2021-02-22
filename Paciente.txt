@@ -22,3 +22,17 @@ Milton ; 79659245 ; Transversal 12 ; 123456666 ; Sisben
 Pedro Pereira ; 987654 ; Av. Jimenez # 31 ; 968574 ; Categoria_C
 Antonio ; 79659289 ; Bosa ; 3125855583 ; Categoria_A
 Pepito ; 3691215 ; Sutamarchan ; 12457836 ; Categoria_C
+ 
+Jaime ; 145 ; Cra 33 ; 3597777777 ; Categoria_B
+Rocio Rodriguez ; 369121518 ; Cra 30  ; 300300300 ; Categoria_C
+Rosa ; 123456 ; Bosa ; 3691215 ; Categoria_B
+Rosa ; 123456 ; Bosa ; 3691215 ; Categoria_B
+Henry ; 741 ; Bosa ; 963 ; Sisben
+Jhoan ; 852 ; Suba ; 321 ; Categoria_B
+Sebas ; 951 ; Suba ; 8574 ; Categoria_B
+qwerty ; 357 ; Bosa ; 41 ; Categoria_B
+Felipe ; 8462 ; asdf ; 52 ; Categoria_A
+awd ; 8536 ; dsf ; 745 ; Categoria_A
+Leidy ; 79659 ; Kennedy ; 754745 ; Sisben
+Jhoan ; 123 ; Bosa ; 312 ; Sisben
+sebas ; 321 ; afb ; 852 ; Categoria_A

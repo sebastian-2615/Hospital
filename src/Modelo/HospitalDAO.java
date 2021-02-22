@@ -200,7 +200,6 @@ public class HospitalDAO {
             consulta.setString(2,objHC.getPaciente().getId());
             consulta.setString(3,objs.getFecha_ingreso().toString());
             consulta.setString(4,objs.getFecha_salida().toString());
-            //consulta.setString(5,objp.getTipo_afiliacion().Tipo());
             consulta.execute();
             mensaje="Registro exitoso...";
             consulta.close();

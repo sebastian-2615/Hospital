@@ -454,8 +454,8 @@ public class Controlador implements ActionListener, Runnable
             objH_C.setServicio(objHosp);
             objRecaudo.getLista_H().add(objH_C);
             PDF.crear_PDF(objH_C);
-            objd.insertarHC(objH_C);
             objd.insertarHosp(objH_C, objHosp);
+            objd.insertarHC(objH_C);
             objVHos.dispose();
             
         }
